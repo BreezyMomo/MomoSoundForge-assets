@@ -20,3 +20,13 @@ The release lock file pins package versions, sizes, SHA-256 digests and logical 
 Packages use the documented momo.sound-assets-pack/v1 streaming format inside gzip. They are not ZIP/tar archives. Do not replace an existing attachment with different content; publish a new version instead.
 
 Application builds and ordinary tests never download assets implicitly. Synchronize explicitly before building.
+
+## Runtime audio on GitHub Pages
+
+The separate runtime library is published at https://breezymomo.github.io/MomoSoundForge-assets/ through `.github/workflows/pages.yml`. Git history still contains no audio files. Release attachments remain the pinned build inputs; Pages serves generated playback files and license notices, not those input archives.
+
+Run the workflow on `main` with the application's full commit SHA and `publish=false` first. It restores pinned inputs, runs the application and audio tests, requires the generated catalog to match the commit, and checks every staged file and the site size. After a successful candidate, run the same SHA with `publish=true`. Only `main` may deploy to the `github-pages` environment.
+
+Publish and verify the audio site before advancing the editor's catalog. The editor repository sets Actions variable `SOUND_LIBRARY_URL` to this Pages URL and verifies remote hashes and CORS before deploying. Never replace release attachments, commit generated audio to Git, or use a moving `latest` release as a source.
+
+For current deployment evidence and application revisions, see the application's `docs/github-audio-pages.md`.
