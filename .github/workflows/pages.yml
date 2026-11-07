@@ -1,0 +1,80 @@
+# Copy this reviewed workflow into MomoSoundForge-assets/.github/workflows/pages.yml.
+# It deliberately does not run in the application repository or publish on push.
+name: Build and deploy sound library
+on:
+  workflow_dispatch:
+    inputs:
+      app_commit:
+        description: Full 40-character commit SHA from BreezyMomo/MomoSoundForge
+        required: true
+        type: string
+      publish:
+        description: Publish the verified audio site (otherwise build and retain the candidate only)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+concurrency:
+  group: audio-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'BreezyMomo/MomoSoundForge-assets'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - name: Validate pinned application commit
+        working-directory: .
+        env:
+          APP_COMMIT: ${{ inputs.app_commit }}
+        run: '[[ "$APP_COMMIT" =~ ^[a-f0-9]{40}$ ]]'
+      - name: Check out the application at the requested commit
+        uses: actions/checkout@v6
+        with:
+          repository: BreezyMomo/MomoSoundForge
+          ref: ${{ inputs.app_commit }}
+          path: app
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - uses: actions/cache@v4
+        with:
+          path: app/.cache/sound-assets
+          key: audio-inputs-v1-${{ runner.os }}-${{ hashFiles('app/sound-assets.lock.json') }}
+      - run: npm run assets:sync
+      - run: npm run test:assets
+      - name: Require a reproducible committed catalog
+        run: git diff --exit-code -- src/data/builtin-catalog.json
+      - run: npm run library:stage -- --output _audio-site
+      - run: npm run library:check -- --directory _audio-site
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: app/_audio-site
+          retention-days: 1
+
+  deploy:
+    if: inputs.publish && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy verified audio files
+        id: deployment
+        uses: actions/deploy-pages@v4
