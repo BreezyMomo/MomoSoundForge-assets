@@ -30,3 +30,9 @@ Run the workflow on `main` with the application's full commit SHA and `publish=f
 Publish and verify the audio site before advancing the editor's catalog. The editor repository sets Actions variable `SOUND_LIBRARY_URL` to this Pages URL and verifies remote hashes and CORS before deploying. Never replace release attachments, commit generated audio to Git, or use a moving `latest` release as a source.
 
 For current deployment evidence and application revisions, see the application's `docs/github-audio-pages.md`.
+
+## Subscribe as an external library
+
+The editor's provider-neutral catalog is `https://breezymomo.github.io/MomoSoundForge-assets/index.json` (`momo.remote-sound-library/v1`). This is distinct from the deployment integrity `manifest.json` and from a personal folder library index. It includes the complete dependency descriptions for resources; generated graphs and audio live beside the catalog, including the `remote/` directory.
+
+Use the same protocol for additional category or team libraries on any HTTPS static service with CORS. Keep each library's `libraryId` stable when moving hosts. See the application's `docs/remote-sound-libraries.md` and `docs/handoff-multi-libraries.md` for publishing commands, acquisition sources, licensing checks and end-to-end validation. This repository remains the official library's build-input and publishing repository; additional subscriptions do not have to be GitHub repositories.
