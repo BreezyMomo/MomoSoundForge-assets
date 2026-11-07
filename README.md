@@ -11,7 +11,7 @@ Use the asset CLI in the matching MomoSoundForge source checkout and its sound-a
 - npm run assets:sync -- --profile archive — all archived inputs
 - npm run assets:verify — offline integrity verification
 
-The asset-storage migration is being integrated into the application repository; older application commits do not include this CLI. Always use a matching lock file and source version.
+The matching application checkout supplies this CLI. Always use its committed lock file and source version together; do not mix inputs from another revision.
 
 ## Integrity and source records
 
