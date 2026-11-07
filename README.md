@@ -31,6 +31,8 @@ Publish and verify the audio site before advancing the editor's catalog. The edi
 
 For current deployment evidence and application revisions, see the application's `docs/github-audio-pages.md`.
 
+The 2026-11-07 complete violin, clarinet and tenor trombone inputs are pinned in [Release 2026.11.07-2](https://github.com/BreezyMomo/MomoSoundForge-assets/releases/tag/2026.11.07-2). This release contains the previous archive inputs as well as the new recordings; the matching application lock remains authoritative. Acquisition sources, exact mappings, verification and the next resource tasks are documented in the application's [complete orchestra handoff](https://github.com/BreezyMomo/MomoSoundForge/blob/main/docs/handoff-orchestra-complete.md). Other instruments have not all been upgraded.
+
 ## Subscribe as an external library
 
 The editor's provider-neutral catalog is `https://breezymomo.github.io/MomoSoundForge-assets/index.json` (`momo.remote-sound-library/v1`). This is distinct from the deployment integrity `manifest.json` and from a personal folder library index. It includes the complete dependency descriptions for resources; generated graphs and audio live beside the catalog, including the `remote/` directory.
