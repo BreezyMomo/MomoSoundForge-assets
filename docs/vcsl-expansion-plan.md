@@ -83,3 +83,5 @@ node tools/vcsl-inventory.mjs --evidence-prefix /path/to/vcsl-audit-20261109 --o
 | `vcsl-winds` | `de0086cf2347fa7e390cfe708e7d7b4f1c7f60545ce9e37e68d2dbb307cefe5c` | `42638152064 → 42638983637` | `9c0d0318a388c3246f91598e8bcf9b145e1daafa3b2dedd15e8a9f6882619fd5` |
 
 其中 `Gong 2` 与 `Tubular Bells 3` 的原始 VCSL 文件是 MP3/OGG，已通过锁定的 `audio-decode` 一次性解码为规范 Float32 PCM，并在来源报告中保留原始 blob；不支持的压缩格式不再是遗留缺口。
+
+官方库的 238 个候选旧单音条目已在固定 Release `2026.11.09-vcsl-removal-schema2` 中按补丁移除，补丁 SHA-256 为 `db288fd5dc682fec8015203735b6afff4bd4e647cb1d322fdefd80d1af403a2c`；不可变文件仍保留。部署后的官方目录包含 1059 个条目，线上 `index.json` SHA-256 为 `49fea1eeab1744e944b7b8691a76e1365911eb89639411fbc3562b32bed7adaf`。
