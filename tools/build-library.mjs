@@ -126,6 +126,7 @@ await writeFile(join(output, 'index.json'), json(next));
 
 const audioIds = new Set(base.audio.map(entry => entry.audioId));
 await runPool(entries, async entry => verifyGraph(entry, audioIds));
-if (entries.some(entry => removeIds.has(entry.id)) || entries.length !== base.entries.length - removeIds.size + patch.replaceEntries.length) throw new Error('entry patch was not applied');
+const replacedExisting = base.entries.filter(entry => replaceIds.has(entry.id)).length;
+if (entries.some(entry => removeIds.has(entry.id)) || entries.length !== base.entries.length - removeIds.size - replacedExisting + patch.replaceEntries.length) throw new Error('entry patch was not applied');
 console.log(`Built ${entries.length} entries and ${base.audio.length} audio dependencies`);
 console.log(`Patched graph files: ${patchFiles.length}`);
