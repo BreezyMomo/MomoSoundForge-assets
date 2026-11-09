@@ -1,15 +1,16 @@
-# Copy this reviewed workflow into MomoSoundForge-assets/.github/workflows/pages.yml.
-# It deliberately does not run in the application repository or publish on push.
 name: Build and deploy sound library
+
 on:
   workflow_dispatch:
     inputs:
-      app_commit:
-        description: Full 40-character commit SHA from BreezyMomo/MomoSoundForge
+      patch_tag:
+        description: Immutable orchestra patch release tag
         required: true
         type: string
+        default: 2026.11.09-orchestra
       publish:
-        description: Publish the verified audio site (otherwise build and retain the candidate only)
+        description: Deploy the verified audio site (otherwise retain the candidate only)
+        required: true
         type: boolean
         default: false
 
@@ -23,43 +24,33 @@ jobs:
   build:
     if: github.repository == 'BreezyMomo/MomoSoundForge-assets'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    defaults:
-      run:
-        working-directory: app
+    timeout-minutes: 45
     steps:
-      - name: Validate pinned application commit
-        working-directory: .
+      - uses: actions/checkout@v6
+
+      - name: Download immutable orchestra patch
         env:
-          APP_COMMIT: ${{ inputs.app_commit }}
-        run: '[[ "$APP_COMMIT" =~ ^[a-f0-9]{40}$ ]]'
-      - name: Check out the application at the requested commit
-        uses: actions/checkout@v6
-        with:
-          repository: BreezyMomo/MomoSoundForge
-          ref: ${{ inputs.app_commit }}
-          path: app
-          persist-credentials: false
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: app/package-lock.json
-      - run: npm ci
-      - run: npm test
-      - uses: actions/cache@v4
-        with:
-          path: app/.cache/sound-assets
-          key: audio-inputs-v1-${{ runner.os }}-${{ hashFiles('app/sound-assets.lock.json') }}
-      - run: npm run assets:sync
-      - run: npm run test:assets
-      - name: Require a reproducible committed catalog
-        run: git diff --exit-code -- src/data/builtin-catalog.json
-      - run: npm run library:stage -- --output _audio-site
-      - run: npm run library:check -- --directory _audio-site
+          GH_TOKEN: ${{ github.token }}
+          PATCH_TAG: ${{ inputs.patch_tag }}
+        run: gh release download "$PATCH_TAG" --repo "$GITHUB_REPOSITORY" --pattern '*.zip' --output patch.zip
+
+      - name: Extract and build the complete catalog
+        run: |
+          rm -rf .patch _audio-site
+          mkdir .patch
+          unzip -q patch.zip -d .patch
+          node tools/build-library.mjs --patch-dir .patch --output _audio-site
+
+      - name: Check generated library size and catalog
+        run: |
+          test -f _audio-site/index.json
+          test "$(find _audio-site -type f | wc -l)" -gt 1000
+          test "$(du -sb _audio-site | cut -f1)" -lt 1073741824
+
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: app/_audio-site
+          path: _audio-site
           retention-days: 1
 
   deploy:

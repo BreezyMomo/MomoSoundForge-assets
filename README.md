@@ -2,16 +2,9 @@
 
 Versioned audio transport packages for [MomoSoundForge](https://github.com/BreezyMomo/MomoSoundForge). Large recordings and editable sample projects are distributed as release attachments; they are not checked into this repository's Git history.
 
-## Restore assets
+## Build the runtime library
 
-Use the asset CLI in the matching MomoSoundForge source checkout and its sound-assets.lock.json:
-
-- npm run assets:sync — build inputs
-- npm run assets:sync -- --profile audit — build inputs plus source verification material
-- npm run assets:sync -- --profile archive — all archived inputs
-- npm run assets:verify — offline integrity verification
-
-The matching application checkout supplies this CLI. Always use its committed lock file and source version together; do not mix inputs from another revision.
+The Pages catalog is built in this repository and does not depend on the application checkout or on a `samples/` folder. Each catalog revision starts from the pinned previous catalog, verifies every downloaded graph and audio file by SHA-256, then applies an immutable patch release. The workflow keeps the complete dependency closure in the generated site and only deploys after the candidate passes its graph, audio and size checks.
 
 ## Integrity and source records
 
@@ -31,7 +24,7 @@ Publish and verify the audio site before advancing the editor's catalog. The edi
 
 For current deployment evidence and application revisions, see the application's `docs/github-audio-pages.md`.
 
-The 2026-11-07 complete violin, clarinet and tenor trombone inputs are pinned in [Release 2026.11.07-2](https://github.com/BreezyMomo/MomoSoundForge-assets/releases/tag/2026.11.07-2). This release contains the previous archive inputs as well as the new recordings; the matching application lock remains authoritative. Acquisition sources, exact mappings, verification and the next resource tasks are documented in the application's [complete orchestra handoff](https://github.com/BreezyMomo/MomoSoundForge/blob/main/docs/handoff-orchestra-complete.md). Other instruments have not all been upgraded.
+The orchestra consolidation patch is pinned in [Release 2026.11.09-orchestra](https://github.com/BreezyMomo/MomoSoundForge-assets/releases/tag/2026.11.09-orchestra). It replaces the split VSCO flute, violin section, cello section, French horn and trumpet entries with complete instrument definitions, and gives the existing Kawai entry stable Chinese and English names. The original audio dependencies are reused by content ID; no recordings are duplicated.
 
 ## Subscribe as an external library
 
