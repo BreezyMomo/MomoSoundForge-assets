@@ -4,6 +4,7 @@ import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { gzipSync, gunzipSync } from 'node:zlib';
 import { fileURLToPath } from 'node:url';
+import decodeEncoded from 'audio-decode';
 
 export const MAX_FRAMES = 5_760_000;
 export const MAX_PCM_BYTES = 16 + MAX_FRAMES * 8;
@@ -69,6 +70,21 @@ export function decodeWav(bytes) {
     channels[channel][frame] = value;
   }
   return { sampleRate, channels, frames, sourceEncoding: encoding === 3 ? 'float' : 'integer', sourceBits: bits, validBits: format.validBits };
+}
+
+/** Decode the small number of legacy VCSL sources that are published as MP3/OGG.
+ * WAV remains on the strict decoder above; compressed sources are decoded once
+ * to canonical float PCM and retain their original Git blob provenance. */
+async function decodeOriginal(bytes, path) {
+  if (/\.wav$/i.test(path)) return decodeWav(bytes);
+  if (!/\.(?:mp3|ogg|oga|opus)$/i.test(path)) throw Error(`Unsupported encoded source format: ${path}`);
+  const decoded = await decodeEncoded(bytes);
+  if (!decoded || !Number.isInteger(decoded.sampleRate) || !Array.isArray(decoded.channelData) || !decoded.channelData.length) throw Error(`Encoded source has no PCM channels: ${path}`);
+  const channels = decoded.channelData.map(channel => channel instanceof Float32Array ? channel : Float32Array.from(channel));
+  const frames = channels[0]?.length;
+  if (!channels.every(channel => channel.length === frames)) throw Error(`Encoded source has mismatched channels: ${path}`);
+  dimensions(decoded.sampleRate, channels.length, frames);
+  return { sampleRate: decoded.sampleRate, channels, frames, sourceEncoding: path.toLowerCase().endsWith('.mp3') ? 'mp3' : 'ogg', sourceBits: 32, validBits: 32 };
 }
 
 export function encodeMsa(sampleRate, channels) {
@@ -170,7 +186,7 @@ export async function prepareOriginal(item, { originalCache, pcmCache }) {
     await loadPrepared(cached);
     return { ...cached, sourcePath: item.path };
   } catch (error) { if (error.code !== 'ENOENT') throw error; }
-  const decoded = decodeWav(original);
+  const decoded = await decodeOriginal(original, item.path);
   const prepared = await persist(decoded.sampleRate, decoded.channels, pcmCache, { schema: VERSION, sourcePath: item.path, sha: item.sha, originalSha256,
     conversion: { kind: 'lossless-pcm-to-float32', sourceEncoding: decoded.sourceEncoding, sourceBits: decoded.sourceBits, validBits: decoded.validBits, normalization: false, resampling: false, trimmed: false } });
   await atomicWrite(metadataFile, JSON.stringify(prepared, null, 2) + '\n');

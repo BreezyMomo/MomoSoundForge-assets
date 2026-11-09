@@ -60,5 +60,6 @@ node tools/vcsl-inventory.mjs --evidence-prefix /path/to/vcsl-audit-20261109 --o
 
 - `sources/vcsl-articulation-names.json` 是资源包构建输入，不是主工程的名称补丁表。它使用 `momo.vcsl-articulation-names/v1`：`names` 提供所有映射共用的演奏法中英文名称，`instruments` 只在同一 slug 在特定乐器中语义不同的情况下覆盖。演奏法 ID 仍是稳定的机器值，语言切换只改变显示文本。
 - `tools/assemble-vcsl.mjs --instruments <validated-instruments> --output <sites>` 读取每个已验证乐器目录的 `entry.json`、`audio.json`、`report.json` 和 `remote/` 闭包。它按 `suggestedLibrary` 分组，以真实文件字节在 850 MiB 规划上限处分库；单个乐器不会被拆分，超出时使用稳定的 `-2`、`-3` 后缀。每个站点写入独立 `index.json`、`validation-scope.json`、`provenance/` 和 `snapshot-manifest.json`，并对音频 ID 元数据冲突、路径穿越、符号链接和 1 GiB 硬上限拒绝。
-- `snapshot-manifest.json` 列出站点除自身以外的每个普通文件及传输字节 SHA-256；音频和图通过内容哈希文件名在站点内去重，允许同盘 hardlink，禁止 symlink。资源仓库发布工具随后从该快照恢复并再次核验，发布附件固定版本，不能覆盖既有附件或使用 `latest`。
+- `snapshot-manifest.json` 列出站点除自身以外的每个普通文件及传输字节 SHA-256；音频和图通过内容哈希文件名在站点内去重，允许同盘 hardlink，禁止 symlink。每站点 `provenance/VCSL-license.json` 固定来源提交、CC0 许可和证据链接，随快照一起发布。资源仓库发布工具随后从该快照恢复并再次核验，发布附件固定版本，不能覆盖既有附件或使用 `latest`。
+- `assembly-report.json` 除每个站点的大小、条目和音频计数外，还记录每个清单 `manifestId` 首次分配到的稳定 `libraryId`、目录和 entry ID，作为分库边界与后续发布记录的权威映射。
 - 已完成演奏法字典和组装器代码；待 `tools/import-vcsl.mjs` 为全部候选生成 `validated` 乐器目录后，运行组装器生成 10 个建议库（容量超限的组会自动拆分），再逐库执行 `validate-library`、空缓存恢复和真实浏览器试听。该状态不能提前写成已发布。

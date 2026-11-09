@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "audio-decode": "^3.12.0"
+  }
+}

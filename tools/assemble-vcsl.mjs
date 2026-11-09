@@ -33,12 +33,20 @@ async function files(root, current = root) {
 }
 async function readJson(path) { try { return JSON.parse(await readFile(path, 'utf8')); } catch (e) { die(`invalid JSON ${path}: ${e.message}`); } }
 function safeRelative(value) {
-  if (typeof value !== 'string' || !value || value.includes('\\') || value.startsWith('/') || value.split('/').some(x => !x || x === '.' || x === '..')) die(`unsafe output path ${value}`);
+  if (typeof value !== 'string' || !value || value.includes('\\') || value.startsWith('/') || value.split('/').some(x => !/^[a-zA-Z0-9_.-]+$/.test(x) || x === '.' || x === '..')) die(`unsafe output path ${value}`);
   return value;
 }
 async function install(source, target) {
   await mkdir(dirname(target), { recursive: true });
   try { await link(source, target); } catch { await copyFile(source, target); }
+}
+async function verifyTransfer(source, metadata, label) {
+  if (!Number.isInteger(metadata?.bytes) || metadata.bytes < 1 || typeof metadata.sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(metadata.sha256)) die(`${label}: missing transfer metadata`);
+  const decodedLimit = metadata.audioId ? 48 : 16;
+  if (!Number.isInteger(metadata.decodedBytes) || metadata.decodedBytes < 1 || metadata.decodedBytes > decodedLimit * 1024 * 1024 || metadata.bytes > 64 * 1024 * 1024) die(`${label}: transfer budget exceeded`);
+  const bytes = await readFile(source);
+  if (bytes.length !== metadata.bytes || digest(bytes) !== metadata.sha256) die(`${label}: transfer hash mismatch`);
+  return bytes.length;
 }
 
 function validateReport(report, path) {
@@ -107,19 +115,25 @@ async function main() {
     chunks.forEach((chunk, index) => assemblies.push({ base, name: nameFor(base, index), members: chunk.members }));
   }
   await mkdir(output, { recursive: true });
-  const report = { schema: 'momo.vcsl-assembly-report/v1', sourcePlan: relative(output, fileURLToPath(PLAN)).split(sep).join('/'), createdAt: new Date().toISOString(), sites: [] };
+  const report = { schema: 'momo.vcsl-assembly-report/v1', sourcePlan: relative(output, fileURLToPath(PLAN)).split(sep).join('/'), createdAt: new Date().toISOString(), assignments: {}, sites: [] };
   for (const assembly of assemblies) {
     const site = join(output, assembly.name);
     try { await lstat(site); die(`output already exists: ${site}`); } catch (e) { if (e.code !== 'ENOENT') throw e; }
     const remote = join(site, 'remote'), provenance = join(site, 'provenance');
     await mkdir(remote, { recursive: true }); await mkdir(provenance, { recursive: true });
+    await writeFile(join(provenance, 'VCSL-license.json'), json({
+      schema: 'momo.vcsl-license-record/v1', repository: plan.source.repository,
+      commit: plan.source.commit, license: plan.source.license, licenseUrl: plan.source.licenseUrl,
+      licenseEvidence: plan.source.licenseEvidence,
+    }));
     const entries = [], audioById = new Map(), copied = new Map(), coverage = {};
     for (const member of assembly.members) {
       const { entry, report: instrumentReport, folder } = member;
       const graphFile = safeRelative(entry.file); const graphSource = join(folder, graphFile.replaceAll('/', sep));
       const graphTarget = join(site, graphFile.replaceAll('/', sep));
-      if (graphFile.startsWith('remote/')) await install(graphSource, graphTarget); else die(`${member.dir}: entry file must be under remote/`);
-      copied.set(graphFile, { path: graphTarget, bytes: (await lstat(graphSource)).size });
+      if (graphFile.startsWith('remote/')) await verifyTransfer(graphSource, entry, `${member.dir}/entry`); else die(`${member.dir}: entry file must be under remote/`);
+      if (!copied.has(graphFile)) await install(graphSource, graphTarget);
+      copied.set(graphFile, { path: graphTarget, bytes: entry.bytes });
       entries.push({ ...entry, file: graphFile });
       const arts = instrumentReport.coverage;
       coverage[entry.id] = Object.fromEntries(Object.entries(arts).map(([articulation, value]) => [articulation, value.ranges]));
@@ -130,7 +144,8 @@ async function main() {
         audioById.set(audio.audioId, audio);
         const af = safeRelative(audio.file); if (!af.startsWith('remote/')) die(`${member.dir}: audio file must be under remote/`);
         const sourcePath = join(folder, af.replaceAll('/', sep)), targetPath = join(site, af.replaceAll('/', sep));
-        if (!copied.has(af)) { await install(sourcePath, targetPath); copied.set(af, { path: targetPath, bytes: (await lstat(sourcePath)).size }); }
+        await verifyTransfer(sourcePath, audio, `${member.dir}/${audio.audioId}`);
+        if (!copied.has(af)) { await install(sourcePath, targetPath); copied.set(af, { path: targetPath, bytes: audio.bytes }); }
       }
       const sourceCopy = join(provenance, `${entry.id}.report.json`); await writeFile(sourceCopy, json(instrumentReport));
       if (instrumentReport.source) await writeFile(join(provenance, `${entry.id}.source.json`), json(instrumentReport.source));
@@ -151,7 +166,13 @@ async function main() {
     const snapshotBytes = json(snapshot);
     if (total + snapshotBytes.length >= HARD_LIMIT) die(`${assembly.name} exceeds hard 1 GiB limit`);
     await writeFile(join(site, 'snapshot-manifest.json'), snapshotBytes);
-    report.sites.push({ libraryId: index.libraryId, directory: assembly.name, instruments: entries.map(e => e.id), entries: entries.length, audio: index.audio.length, bytes: total + snapshotBytes.length });
+    const siteReport = { libraryId: index.libraryId, directory: assembly.name, suggestedLibrary: assembly.base, instruments: entries.map(e => e.id), entries: entries.length, audio: index.audio.length, bytes: total + snapshotBytes.length };
+    report.sites.push(siteReport);
+    for (const member of assembly.members) {
+      // A split variant (Steinway pedal) shares the manifest ID; retain the
+      // first stable assignment while siteReport still lists every entry.
+      if (!Object.hasOwn(report.assignments, member.report.manifestId)) report.assignments[member.report.manifestId] = { libraryId: index.libraryId, directory: assembly.name, entryId: member.entry.id };
+    }
   }
   await writeFile(join(output, 'assembly-report.json'), json(report));
   console.log(JSON.stringify(report, null, 2));
