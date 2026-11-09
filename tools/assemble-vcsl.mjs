@@ -151,7 +151,14 @@ async function main() {
       if (instrumentReport.source) await writeFile(join(provenance, `${entry.id}.source.json`), json(instrumentReport.source));
     }
     entries.sort((a, b) => a.id.localeCompare(b.id));
-    const index = { schema: 'momo.remote-sound-library/v1', libraryId: assembly.name.replace(/^MomoSoundForge-assets-/, ''), name: `VCSL ${assembly.base}`, entries, audio: [...audioById.values()].sort((a, b) => a.audioId.localeCompare(b.audioId)) };
+    const index = {
+      schema: 'momo.remote-sound-library/v1',
+      libraryId: assembly.name.replace(/^MomoSoundForge-assets-/, ''),
+      name: `VCSL ${assembly.base}`,
+      entries,
+      audio: [...audioById.values()].map(item => ({ schema: 'momo.audio-reference/v1', ...item }))
+        .sort((a, b) => a.audioId.localeCompare(b.audioId)),
+    };
     await writeFile(join(site, 'index.json'), json(index));
     await writeFile(join(site, 'validation-scope.json'), json({ schema: 'momo.library-validation-scope/v1', instruments: coverage }));
     const siteFiles = await files(site);
