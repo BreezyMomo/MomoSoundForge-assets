@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: BreezyMomo/MomoSoundForge
-          ref: e0a843227894e430e6a67a03801404d5fad16225
+          ref: 4f125e21a1f78985aff72e8dd52c5b1e2e049bbc
           path: protocol-app
 
       - name: Install the protocol validator and test its rejection paths
