@@ -33,9 +33,23 @@ async function fetchBytes(url, expected, label) {
     try { bytes = await readFile(join(cache, expected)); } catch (error) { if (error.code !== 'ENOENT') throw error; }
   }
   if (!bytes) {
-    const response = await fetch(url, { redirect: 'error', signal: AbortSignal.timeout(60000) });
-    if (!response.ok) throw new Error(`${label}: HTTP ${response.status}`);
-    bytes = new Uint8Array(await response.arrayBuffer());
+    for (let attempt = 0; ; attempt++) {
+      let response;
+      try {
+        response = await fetch(url, { redirect: 'error', signal: AbortSignal.timeout(60000) });
+        if (response.ok) { bytes = new Uint8Array(await response.arrayBuffer()); break; }
+      } catch (error) {
+        if (attempt >= 4) throw new Error(`${label}: download failed`, { cause: error });
+        response = undefined;
+      }
+      if (response && ![408, 429, 500, 502, 503, 504].includes(response.status)) throw new Error(`${label}: HTTP ${response.status}`);
+      if (attempt >= 4) throw new Error(`${label}: HTTP ${response?.status}`);
+      await response?.body?.cancel();
+      const retryAfter = Number(response?.headers.get('retry-after')) * 1000;
+      const delay = Math.min(10000, Math.max(1000 * 2 ** attempt, retryAfter || 0));
+      console.warn(`${label}: retrying download (${attempt + 1}/4)`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
   }
   if (expected !== undefined && sha256(bytes) !== expected) throw new Error(`${label}: SHA-256 mismatch`);
   if (cache && expected) await writeFile(join(cache, expected), bytes);

@@ -44,7 +44,7 @@ jobs:
           PROTOCOL_APP_ROOT: ${{ github.workspace }}/protocol-app
         run: |
           npm ci --prefix protocol-app
-          node --test tools/validate-library.test.mjs
+          node --test tools/build-library.test.mjs tools/validate-library.test.mjs
 
       - name: Download immutable orchestra patch
         env:
@@ -57,7 +57,7 @@ jobs:
           rm -rf .patch _audio-site
           mkdir .patch
           unzip -q patch.zip -d .patch
-          node tools/build-library.mjs --patch-dir .patch --output _audio-site
+          node tools/build-library.mjs --patch-dir .patch --output _audio-site --concurrency 12
 
       - name: Validate every graph, complete audio dependency and note boundary
         run: node tools/validate-library.mjs --app-root protocol-app --site _audio-site --report validation-report.json

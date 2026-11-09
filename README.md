@@ -15,7 +15,7 @@ Original source licenses remain authoritative. The source packages' `source-meta
 The editor owns the protocol implementation. The workflow checks out application commit `e0a843227894e430e6a67a03801404d5fad16225` only as a validator, installs its locked dependencies, and runs the publisher regression test. No catalog or recording is moved into the application repository.
 
 ```sh
-PROTOCOL_APP_ROOT=/path/to/pinned/app node --test tools/validate-library.test.mjs
+PROTOCOL_APP_ROOT=/path/to/pinned/app node --test tools/build-library.test.mjs tools/validate-library.test.mjs
 node tools/build-library.mjs --patch-dir /path/to/extracted/patch --output _audio-site
 node tools/validate-library.mjs --app-root /path/to/pinned/app --site _audio-site --report validation-report.json
 ```
