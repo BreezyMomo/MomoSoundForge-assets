@@ -2,6 +2,8 @@
 
 Self-contained official sound library for [MomoSoundForge](https://github.com/BreezyMomo/MomoSoundForge), served at [index.json](https://breezymomo.github.io/MomoSoundForge-assets/index.json). The application supplies the editor and generic resource protocol; this repository owns sound definitions, mappings, attribution, dependency records and publishing tools. No application `samples/` checkout is required.
 
+Maintainers and AI agents must read [AGENTS.md](AGENTS.md) and the [instrument organization and replacement rules](https://github.com/BreezyMomo/MomoSoundForge/blob/main/docs/instrument-library-rules.md) before changing instruments. These cover complete definitions, verified source replacement, bilingual names, dependency closure and note-boundary acceptance; the app's [orchestra handoff](https://github.com/BreezyMomo/MomoSoundForge/blob/main/docs/handoff-orchestra-complete.md) records the published state.
+
 ## Immutable build inputs
 
 Large recordings and editable projects belong in versioned Release attachments, never Git history. A patch attachment contains `patch.json`, its SHA-256-pinned `base-index.json`, and newly sealed resource graphs. Existing audio is reused by content ID. Never replace an existing attachment or use `latest` as an input.
