@@ -7,7 +7,7 @@ on:
         description: Immutable orchestra patch release tag
         required: true
         type: string
-        default: 2026.11.09-orchestra
+        default: 2026.11.09-orchestra-fix
       publish:
         description: Deploy the verified audio site (otherwise retain the candidate only)
         required: true
@@ -28,6 +28,24 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Check out the pinned protocol implementation
+        uses: actions/checkout@v6
+        with:
+          repository: BreezyMomo/MomoSoundForge
+          ref: e0a843227894e430e6a67a03801404d5fad16225
+          path: protocol-app
+
+      - name: Install the protocol validator and test its rejection paths
+        env:
+          PROTOCOL_APP_ROOT: ${{ github.workspace }}/protocol-app
+        run: |
+          npm ci --prefix protocol-app
+          node --test tools/validate-library.test.mjs
+
       - name: Download immutable orchestra patch
         env:
           GH_TOKEN: ${{ github.token }}
@@ -40,6 +58,14 @@ jobs:
           mkdir .patch
           unzip -q patch.zip -d .patch
           node tools/build-library.mjs --patch-dir .patch --output _audio-site
+
+      - name: Validate every graph, complete audio dependency and note boundary
+        run: node tools/validate-library.mjs --app-root protocol-app --site _audio-site --report validation-report.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: library-validation
+          path: validation-report.json
 
       - name: Check generated library size and catalog
         run: |

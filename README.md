@@ -1,33 +1,31 @@
 # MomoSoundForge assets
 
-Versioned audio transport packages for [MomoSoundForge](https://github.com/BreezyMomo/MomoSoundForge). Large recordings and editable sample projects are distributed as release attachments; they are not checked into this repository's Git history.
+Self-contained official sound library for [MomoSoundForge](https://github.com/BreezyMomo/MomoSoundForge), served at [index.json](https://breezymomo.github.io/MomoSoundForge-assets/index.json). The application supplies the editor and generic resource protocol; this repository owns sound definitions, mappings, attribution, dependency records and publishing tools. No application `samples/` checkout is required.
 
-## Build the runtime library
+## Immutable build inputs
 
-The Pages catalog is built in this repository and does not depend on the application checkout or on a `samples/` folder. Each catalog revision starts from the pinned previous catalog, verifies every downloaded graph and audio file by SHA-256, then applies an immutable patch release. The workflow keeps the complete dependency closure in the generated site and only deploys after the candidate passes its graph, audio and size checks.
+Large recordings and editable projects belong in versioned Release attachments, never Git history. A patch attachment contains `patch.json`, its SHA-256-pinned `base-index.json`, and newly sealed resource graphs. Existing audio is reused by content ID. Never replace an existing attachment or use `latest` as an input.
 
-## Integrity and source records
+The repair release is `2026.11.09-orchestra-fix`. It replaces five malformed orchestra instrument graphs, restores complete mappings in the flute/violin/cello demonstrations, and removes the obsolete four-second playback limit from complete recordings. The source audit quarantined damaged cello tremolo and horn staccato takes; their uncovered high velocities reuse healthy recordings of the same pitch. Existing mappings and default demonstration PCM are preserved.
 
-The release lock file pins package versions, sizes, SHA-256 digests and logical file manifests. SHA256SUMS also covers the metadata attachment. source-metadata.zip includes collection manifests, mappings, original license notices and provenance records. Original source licenses remain authoritative; no blanket license is assigned to the included editable projects by this repository.
+Original source licenses remain authoritative. The source packages' `source-metadata.zip` and `SHA256SUMS` retain manifests, mappings, license notices and provenance. Older `momo.sound-assets-pack/v1` attachments are gzip streams, not ZIP archives.
 
-Packages use the documented momo.sound-assets-pack/v1 streaming format inside gzip. They are not ZIP/tar archives. Do not replace an existing attachment with different content; publish a new version instead.
+## Validate and publish
 
-Application builds and ordinary tests never download assets implicitly. Synchronize explicitly before building.
+The editor owns the protocol implementation. The workflow checks out application commit `e0a843227894e430e6a67a03801404d5fad16225` only as a validator, installs its locked dependencies, and runs the publisher regression test. No catalog or recording is moved into the application repository.
 
-## Runtime audio on GitHub Pages
+```sh
+PROTOCOL_APP_ROOT=/path/to/pinned/app node --test tools/validate-library.test.mjs
+node tools/build-library.mjs --patch-dir /path/to/extracted/patch --output _audio-site
+node tools/validate-library.mjs --app-root /path/to/pinned/app --site _audio-site --report validation-report.json
+```
 
-The separate runtime library is published at https://breezymomo.github.io/MomoSoundForge-assets/ through `.github/workflows/pages.yml`. Git history still contains no audio files. Release attachments remain the pinned build inputs; Pages serves generated playback files and license notices, not those input archives.
+The builder checks hashes, applies the pinned patch and preserves previous immutable graph URLs. Its optional `--cache` directory stores verified downloads by SHA-256. The validator uses the editor's strict `openResourceGraph`, checks every dependency and decoded audio content ID, and exercises MIDI/velocity boundaries, alternating takes, short notes and notes near the actual transposed recording length. Complete orchestra instruments and demonstrations also require continuous velocity coverage. Known flute/cello coverage and four-second violin regressions use the real `scoreIssues` and `projectScoreIssues` implementations. Unlooped recordings retain their real finite duration.
 
-Run the workflow on `main` with the application's full commit SHA and `publish=false` first. It restores pinned inputs, runs the application and audio tests, requires the generated catalog to match the commit, and checks every staged file and the site size. After a successful candidate, run the same SHA with `publish=true`. Only `main` may deploy to the `github-pages` environment.
-
-Publish and verify the audio site before advancing the editor's catalog. The editor repository sets Actions variable `SOUND_LIBRARY_URL` to this Pages URL and verifies remote hashes and CORS before deploying. Never replace release attachments, commit generated audio to Git, or use a moving `latest` release as a source.
-
-For current deployment evidence and application revisions, see the application's `docs/github-audio-pages.md`.
-
-The orchestra consolidation patch is pinned in [Release 2026.11.09-orchestra](https://github.com/BreezyMomo/MomoSoundForge-assets/releases/tag/2026.11.09-orchestra). It replaces the split VSCO flute, violin section, cello section, French horn and trumpet entries with complete instrument definitions, and gives the existing Kawai entry stable Chinese and English names. The original audio dependencies are reused by content ID; no recordings are duplicated.
+Run `.github/workflows/pages.yml` on `main` with the fixed patch tag and `publish=false` first. Inspect the validation report and candidate artifact, then run the same revision/tag with `publish=true`. Only `main` may deploy to `github-pages`; all checks must pass before deployment. Verify the deployed catalog, empty-cache loading, browser audition, project save/reopen and export.
 
 ## Subscribe as an external library
 
-The editor's provider-neutral catalog is `https://breezymomo.github.io/MomoSoundForge-assets/index.json` (`momo.remote-sound-library/v1`). This is distinct from the deployment integrity `manifest.json` and from a personal folder library index. It includes the complete dependency descriptions for resources; generated graphs and audio live beside the catalog, including the `remote/` directory.
+The catalog uses `momo.remote-sound-library/v1`. Its `libraryId` is stable independently of the hosting URL; every library carries its own complete dependencies. Official and third-party libraries use the same protocol. Supplemental VCSL instruments are maintained in [MomoSoundForge-assets-vcsl-harp-sax](https://github.com/BreezyMomo/MomoSoundForge-assets-vcsl-harp-sax).
 
-Use the same protocol for additional category or team libraries on any HTTPS static service with CORS. Keep each library's `libraryId` stable when moving hosts. See the application's `docs/remote-sound-libraries.md` and `docs/handoff-multi-libraries.md` for publishing commands, acquisition sources, licensing checks and end-to-end validation. This repository remains the official library's build-input and publishing repository; additional subscriptions do not have to be GitHub repositories.
+The editor subscribes by URL through deployment settings. See its [multi-library rules](https://github.com/BreezyMomo/MomoSoundForge/blob/main/docs/remote-sound-libraries.md) and [maintenance workflow](https://github.com/BreezyMomo/MomoSoundForge/blob/main/docs/builtin-resource-maintenance.md).

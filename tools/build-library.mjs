@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
-import { dirname, join, normalize, relative, resolve } from 'node:path';
+import { dirname, join, posix, resolve } from 'node:path';
 import { gunzipSync } from 'node:zlib';
 
 const args = new Map();
@@ -16,21 +16,29 @@ for (let i = 2; i < process.argv.length; i += 1) {
 const baseUrl = String(args.get('base-url') ?? 'https://breezymomo.github.io/MomoSoundForge-assets/').replace(/\/?$/, '/');
 const patchDir = resolve(String(args.get('patch-dir') ?? '.patch'));
 const output = resolve(String(args.get('output') ?? '_audio-site'));
+const cache = args.get('cache') ? resolve(String(args.get('cache'))) : undefined;
 const concurrency = Math.max(1, Math.min(32, Number(args.get('concurrency') ?? 24)));
 const json = value => JSON.stringify(value, null, 2) + '\n';
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const safePath = value => {
-  const clean = normalize(value);
+  const clean = posix.normalize(value);
   if (clean.startsWith('..') || clean.includes('\\') || clean.startsWith('/') || clean.includes(':')) throw new Error(`unsafe path: ${value}`);
   return clean;
 };
 const readJson = async file => JSON.parse(await readFile(file, 'utf8'));
 
 async function fetchBytes(url, expected, label) {
-  const response = await fetch(url, { redirect: 'error' });
-  if (!response.ok) throw new Error(`${label}: HTTP ${response.status}`);
-  const bytes = new Uint8Array(await response.arrayBuffer());
+  let bytes;
+  if (cache && expected) {
+    try { bytes = await readFile(join(cache, expected)); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+  }
+  if (!bytes) {
+    const response = await fetch(url, { redirect: 'error', signal: AbortSignal.timeout(60000) });
+    if (!response.ok) throw new Error(`${label}: HTTP ${response.status}`);
+    bytes = new Uint8Array(await response.arrayBuffer());
+  }
   if (expected !== undefined && sha256(bytes) !== expected) throw new Error(`${label}: SHA-256 mismatch`);
+  if (cache && expected) await writeFile(join(cache, expected), bytes);
   return bytes;
 }
 
@@ -79,20 +87,27 @@ const patch = await readJson(join(patchDir, 'patch.json'));
 if (patch.schema !== 'momo.remote-sound-library-patch/v1' || !/^[a-f0-9]{64}$/.test(patch.baseIndexSha256) ||
     !Array.isArray(patch.removeEntryIds) || !Array.isArray(patch.replaceEntries)) throw new Error('invalid patch manifest');
 
-const indexBytes = await fetchBytes(new URL('index.json', baseUrl), patch.baseIndexSha256, 'base index');
+// Pin the previous catalog in the release, so rebuilding after deployment does
+// not accidentally use the new Pages catalog as its own input.
+const indexBytes = patch.baseIndexFile
+  ? await readFile(join(patchDir, safePath(patch.baseIndexFile)))
+  : await fetchBytes(new URL('index.json', baseUrl), patch.baseIndexSha256, 'base index');
+if (sha256(indexBytes) !== patch.baseIndexSha256) throw new Error('base index: SHA-256 mismatch');
 const base = JSON.parse(new TextDecoder().decode(indexBytes));
 if (base.schema !== 'momo.remote-sound-library/v1' || base.libraryId !== 'momo-official-sounds') throw new Error('invalid base library');
 const removeIds = new Set(patch.removeEntryIds);
 const replaceIds = new Set(patch.replaceEntries.map(entry => entry.id));
 if (replaceIds.size !== patch.replaceEntries.length || [...removeIds].some(id => replaceIds.has(id))) throw new Error('patch id collision');
-const firstRemoved = base.entries.findIndex(entry => removeIds.has(entry.id));
-if (firstRemoved < 0 || removeIds.size !== base.entries.filter(entry => removeIds.has(entry.id)).length) throw new Error('patch base entries missing');
+const firstAffected = base.entries.findIndex(entry => removeIds.has(entry.id) || replaceIds.has(entry.id));
+if (firstAffected < 0 || removeIds.size !== base.entries.filter(entry => removeIds.has(entry.id)).length) throw new Error('patch base entries missing');
 
 await rm(output, { recursive: true, force: true });
 await mkdir(join(output, 'remote'), { recursive: true });
-const removedFiles = new Set(base.entries.filter(entry => removeIds.has(entry.id)).map(entry => entry.file));
+if (cache) await mkdir(cache, { recursive: true });
 const files = [
-  ...base.entries.filter(entry => !removedFiles.has(entry.file)).map(entry => ({ file: entry.file, sha256: entry.sha256 })),
+  // Keep immutable URLs referenced by the previous catalog available during
+  // refreshes and for resources that were already opened in another browser.
+  ...base.entries.map(entry => ({ file: entry.file, sha256: entry.sha256 })),
   ...base.audio.map(entry => ({ file: entry.file, sha256: entry.sha256 })),
 ];
 const uniqueFiles = [...new Map(files.map(file => [file.file, file])).values()];
@@ -115,7 +130,7 @@ for (const entry of patch.replaceEntries) {
 }
 
 const entries = base.entries.filter(entry => !removeIds.has(entry.id) && !replaceIds.has(entry.id));
-entries.splice(firstRemoved, 0, ...patch.replaceEntries);
+entries.splice(firstAffected, 0, ...patch.replaceEntries);
 const entryIds = new Set();
 for (const entry of entries) {
   if (entryIds.has(entry.id)) throw new Error(`duplicate entry ${entry.id}`);
