@@ -62,4 +62,24 @@ node tools/vcsl-inventory.mjs --evidence-prefix /path/to/vcsl-audit-20261109 --o
 - `tools/assemble-vcsl.mjs --instruments <validated-instruments> --output <sites>` 读取每个已验证乐器目录的 `entry.json`、`audio.json`、`report.json` 和 `remote/` 闭包。它按 `suggestedLibrary` 分组，以真实文件字节在 850 MiB 规划上限处分库；单个乐器不会被拆分，超出时使用稳定的 `-2`、`-3` 后缀。每个站点写入独立 `index.json`、`validation-scope.json`、`provenance/` 和 `snapshot-manifest.json`，并对音频 ID 元数据冲突、路径穿越、符号链接和 1 GiB 硬上限拒绝。
 - `snapshot-manifest.json` 列出站点除自身以外的每个普通文件及传输字节 SHA-256；音频和图通过内容哈希文件名在站点内去重，允许同盘 hardlink，禁止 symlink。每站点 `provenance/VCSL-license.json` 固定来源提交、CC0 许可和证据链接，随快照一起发布。资源仓库发布工具随后从该快照恢复并再次核验，发布附件固定版本，不能覆盖既有附件或使用 `latest`。
 - `assembly-report.json` 除每个站点的大小、条目和音频计数外，还记录每个清单 `manifestId` 首次分配到的稳定 `libraryId`、目录和 entry ID，作为分库边界与后续发布记录的权威映射。
-- 已完成演奏法字典和组装器代码；待 `tools/import-vcsl.mjs` 为全部候选生成 `validated` 乐器目录后，运行组装器生成 10 个建议库（容量超限的组会自动拆分），再逐库执行 `validate-library`、空缓存恢复和真实浏览器试听。该状态不能提前写成已发布。
+- 已完成演奏法字典、压缩音频解码（MP3/OGG/OGA/Opus）和组装器代码。固定 VCSL 快照已生成 100 个完整变体（含既有 Concert Harp、Tenor Saxophone、Kawai 复用），其中 98 个首轮 WAV 转换完成，Gong 2 与 Tubular Bells 3 经可复现压缩解码后补齐；两者保留原始 Git blob 来源记录。组装器按真实大小生成 11 个候选库（施坦威延音踏板独立分库），全部通过 `validate-library` 的图、依赖、音域和全力度边界检查。候选／部署运行号、Release 附件哈希和 Pages 目录哈希在发布完成后追加记录。
+
+## 2026-11-09 schema3 发布记录
+
+所有库使用 Git 提交 `94b151eb065e614307fa2ec6f9e8138d2266f603`（工具仓库 `main`）和固定 Release tag `2026.11.09-vcsl-complete-schema3`。候选运行先验证 `library-clean.zip`（ZIP 内路径无 `./` 前缀），部署运行随后使用同一附件；原始 `library.zip` 附件保留但不用于线上部署。11 个 Pages 目录均返回 200、CORS 为 `*`，并通过空缓存候选与部署验证：
+
+| libraryId | Release / ZIP SHA-256 | candidate → deploy | Pages index SHA-256 |
+|---|---|---|---|
+| `vcsl-harpsichords` | `48deb8c0351546ba5076d73a0479f4d99048dcba80f3561cd4747c44b369fba` | `42638510821 → 42638942107` | `a4c9a7f05ca406fa624c9cda3649ed5d6b0c0c7284a6c40b9bdea9f7ba2c5a5b` |
+| `vcsl-keyboards` | `f9d661cac88698db3ba82486f9445ce00102b0fc433316810f3949c8e2f25228` | `42638117026 → 42638947599` | `9fbc0ee064a5f6e7ab71043032889225af5ee8ec14cde3824e2d99cc00d3fc14` |
+| `vcsl-mallets` | `4e2ab6cd8391a7839629a3354921d0dd5bb5aa20dc1a13d5d46ab29e1f97b540` | `42638121276 → 42638952020` | `8a0f63ab061a78f2996159676bcca78f7d0afaa74fb5021c2b40963ecc734e0b` |
+| `vcsl-percussion` | `095376a4d7c9ed48b917c48901fa75e1197c092a4729cc5f74f6b6a8c746f0dc` | `42638125601 → 42638956157` | `18c9191854e080ffe5880fd2c0b1e28f5e1d46af51064ca18dff7677259a6f0e` |
+| `vcsl-piano-knight` | `183b0bd92fb92187dc29cc22d9b1167ec5fb35c48712691c2f2275cf377937ba` | `42638129366 → 42638959826` | `7ad452ab876519c31007129450be6df127a7914e8ab3dac480c630436907c8fa` |
+| `vcsl-piano-steinway` | `239b5d8a084f861eb84556cade3076773e4477354645688e0e0ace99107e4bba` | `42638132639 → 42638964214` | `a8d84393e6d39e84811322203689682f8fe6d9d88b76e9d8581c31236c834f4d` |
+| `vcsl-piano-steinway-2` | `4966ccaf518394d33ceee52c6efe085e9cb84ecc98b32d3325bdd8fb0054a2a9` | `42638135843 → 42641069190` | `a5c33b46fb3a7a114006b8c80a63a0dee7c52cb01a97dcbe72533a1d9caf7b96` |
+| `vcsl-piano-yamaha` | `4c7688dadf0cd29bd059cd100df0901098a686de1d87086f9e55f39b6a0d84b0` | `42638140065 → 42638971609` | `10734ca1d52ef4211ab740ee7a6f0b2e734738bafa08b66b4e5999aede5e2d35` |
+| `vcsl-plucked` | `46a98357023ec20f94038bf6118e2f6065a3c3d53b7d1b6839bce1288e2583fa` | `42638144575 → 42638976116` | `519ad67a8704f35b152a1826d0c4d1c84e08f6c89eda3edbddb0af4d81d31a02` |
+| `vcsl-timpani` | `f40912ef39a7860584ca0b44071164a80ef979957781cfa07a756c61fbb7ffce` | `42638148365 → 42638979231` | `68a91889cd547b2eee73c6433944ecd58ee7a99276807fbacdea87371f21ef61` |
+| `vcsl-winds` | `de0086cf2347fa7e390cfe708e7d7b4f1c7f60545ce9e37e68d2dbb307cefe5c` | `42638152064 → 42638983637` | `9c0d0318a388c3246f91598e8bcf9b145e1daafa3b2dedd15e8a9f6882619fd5` |
+
+其中 `Gong 2` 与 `Tubular Bells 3` 的原始 VCSL 文件是 MP3/OGG，已通过锁定的 `audio-decode` 一次性解码为规范 Float32 PCM，并在来源报告中保留原始 blob；不支持的压缩格式不再是遗留缺口。
