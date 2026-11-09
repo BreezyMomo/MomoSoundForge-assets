@@ -12,12 +12,29 @@ const protocol = await loadAppProtocol(args.get('app-root'));
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const failures = [], entries = []; let fixtures = 0, regressionFixtures = 0;
 const completeIds = new Set(['instrument-vsco-flute', 'instrument-vsco-violin-section', 'instrument-vsco-cello-section', 'instrument-vsco-french-horn', 'instrument-vsco-trumpet']);
+let coverageScope;
+const ownRecord = value => !!value && typeof value === 'object' && !Array.isArray(value);
+function parseScope(raw) {
+  if (!ownRecord(raw) || raw.schema !== 'momo.library-validation-scope/v1' || !ownRecord(raw.instruments)) throw Error('Invalid validation coverage scope');
+  for (const [id, articulations] of Object.entries(raw.instruments)) {
+    if (!/^[a-zA-Z0-9-]{1,120}$/.test(id) || !ownRecord(articulations) || !Object.keys(articulations).length) throw Error(`Invalid coverage instrument: ${id}`);
+    for (const [articulation, ranges] of Object.entries(articulations)) {
+      if (!articulation || articulation.length > 60 || !Array.isArray(ranges) || !ranges.length || ranges.length > 128) throw Error(`Invalid coverage articulation: ${id}/${articulation}`);
+      let high = -1;
+      for (const range of ranges) {
+        if (!Array.isArray(range) || range.length !== 2 || !range.every(Number.isInteger) || range[0] < 0 || range[1] > 127 || range[0] > range[1] || range[0] <= high) throw Error(`Invalid coverage ranges: ${id}/${articulation}`);
+        high = range[1];
+      }
+    }
+  }
+  return raw.instruments;
+}
 function inside(file) {
   const target = resolve(site, file), local = relative(site, target);
   if (local.startsWith('..') || resolve(target) === site) throw Error(`Unsafe file: ${file}`);
   return target;
 }
-function checkScore(score, assets, duration, label, requireCoverage) {
+function checkScore(score, assets, duration, label, requireCoverage, declared) {
   const originalIssues = protocol.scoreIssues(score, assets, duration);
   if (originalIssues.length) throw Error(`${label}: existing score ${JSON.stringify(originalIssues)}`);
   for (const instrument of score.instruments) {
@@ -47,22 +64,29 @@ function checkScore(score, assets, duration, label, requireCoverage) {
       }
     }
     if (requireCoverage) {
-      for (const articulation of new Set(instrument.regions.map(r => r.articulation))) {
+      const articulations = [...new Set(instrument.regions.map(r => r.articulation))];
+      if (declared && (Object.keys(declared).length !== articulations.length || articulations.some(art => !Object.hasOwn(declared, art)))) throw Error(`${label}: coverage articulation declaration differs from mappings`);
+      for (const articulation of articulations) {
         const regions = instrument.regions.filter(r => r.articulation === articulation);
         const low = Math.min(...regions.map(r => r.keyLow)), high = Math.max(...regions.map(r => r.keyHigh));
-        for (let midi = low; midi <= high; midi++) for (let velocity = 1; velocity <= 127; velocity++) {
+        const ranges = declared?.[articulation] ?? [[low, high]];
+        const declaredKeys = new Set(ranges.flatMap(([lo, hi]) => Array.from({ length: hi - lo + 1 }, (_, i) => lo + i)));
+        if (declared) for (let midi = 0; midi <= 127; midi++) {
+          if (declaredKeys.has(midi) !== regions.some(r => midi >= r.keyLow && midi <= r.keyHigh)) throw Error(`${label}: coverage key declaration differs from mappings at MIDI ${midi}, ${articulation}`);
+        }
+        for (const midi of declaredKeys) for (let velocity = 1; velocity <= 127; velocity++) {
           if (!regions.some(r => midi >= r.keyLow && midi <= r.keyHigh && velocity >= r.velocityLow && velocity <= r.velocityHigh)) throw Error(`${label}: coverage hole at MIDI ${midi}, velocity ${velocity}, ${articulation}`);
         }
       }
     }
   }
 }
-function checkProject(project, label, coverage) {
+function checkProject(project, label, coverage, declared) {
   const issues = protocol.projectScoreIssues(project);
   if (issues.length) throw Error(`${label}: project score ${JSON.stringify(issues)}`);
   for (const layer of project.inputs) {
-    if (layer.player.score) checkScore(layer.player.score, project.assets, layer.player.duration, `${label}/${layer.id}`, coverage);
-    if (layer.player.mix) checkProject(layer.player.mix, `${label}/${layer.id}`, coverage);
+    if (layer.player.score) checkScore(layer.player.score, project.assets, layer.player.duration, `${label}/${layer.id}`, coverage, declared);
+    if (layer.player.mix) checkProject(layer.player.mix, `${label}/${layer.id}`, coverage, declared);
   }
 }
 function checkRegressions(project, id) {
@@ -86,6 +110,11 @@ function checkRegressions(project, id) {
 
 try {
   const index = protocol.parseRemoteIndex(JSON.parse(await readFile(join(site, 'index.json'), 'utf8')), 'https://validation.invalid/index.json');
+  try { coverageScope = parseScope(JSON.parse(await readFile(args.get('coverage-file') ? resolve(args.get('coverage-file')) : join(site, 'validation-scope.json'), 'utf8'))); }
+  catch (error) { if (args.get('coverage-file') || error.code !== 'ENOENT') throw error; }
+  if (coverageScope) for (const id of Object.keys(coverageScope)) {
+    if (!index.entries.some(entry => entry.id === id && entry.kind === 'instrument')) failures.push({ id, error: 'Coverage scope references an unknown instrument entry' });
+  }
   const audio = new Map(index.audio.map(a => [a.audioId, a]));
   for (const entry of index.entries) {
     try {
@@ -96,14 +125,20 @@ try {
       const graph = JSON.parse(decoded);
       if (graph.root !== entry.contentId || graph.entry.id !== entry.id || graph.entry.kind !== entry.kind) throw Error('catalog identity mismatch');
       const opened = await protocol.openResourceGraph(graph);
+      let packedBytes = packed.length;
       for (const [id, ref] of opened.audio) {
         const file = audio.get(id);
         if (!file || file.frames !== ref.frames || file.sampleRate !== ref.sampleRate || file.channelCount !== ref.channelCount) throw Error(`incomplete audio dependency ${id}`);
+        packedBytes += file.bytes;
       }
-      const coverage = completeIds.has(entry.id) || /^example-expanded-(flute|violin|cello)$/.test(entry.id);
+      if (packedBytes > protocol.PACKAGE_BYTES) throw Error(`complete resource exceeds packed package budget: ${packedBytes}`);
+      const isVcsl = entry.kind === 'instrument' && entry.id.startsWith('instrument-vcsl-');
+      if (isVcsl && coverageScope && !Object.hasOwn(coverageScope, entry.id)) throw Error('Missing VCSL instrument coverage declaration');
+      const declared = coverageScope?.[entry.id];
+      const coverage = !!declared || isVcsl || completeIds.has(entry.id) || /^example-expanded-(flute|violin|cello)$/.test(entry.id);
       if (entry.kind === 'instrument' || entry.kind === 'sound') {
         const project = protocol.resourceProject(opened.resource);
-        checkProject(project, entry.id, coverage);
+        checkProject(project, entry.id, coverage, declared);
         checkRegressions(project, entry.id);
       }
       entries.push({ id: entry.id, contentId: graph.root, audio: opened.audio.size });

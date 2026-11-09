@@ -1,0 +1,3230 @@
+{
+  "schema": "momo.vcsl-source-plan/v1",
+  "createdAt": "2026-11-09",
+  "source": {
+    "repository": "https://github.com/sgossner/VCSL",
+    "branch": "sfz",
+    "commit": "dfcf4a4918771eee884b96ad4493de82ef84daf6",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "licenseEvidence": "https://github.com/sgossner/VCSL/blob/dfcf4a4918771eee884b96ad4493de82ef84daf6/README.md"
+  },
+  "limits": {
+    "plannedLibraryBytes": 891289600,
+    "maximumLibraryBytes": 1073741824,
+    "maximumPackageBytes": 805306368,
+    "maximumExpandedPackageBytes": 1610612736
+  },
+  "removalPolicy": "Remove listed recording catalog entries only after the corresponding complete instrument is published and validated. Retain immutable files and dependencies. Never modify existing user projects.",
+  "instruments": [
+    {
+      "id": "instrument-vcsl-ball-whistle",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Ball Whistle",
+      "names": {
+        "zh": "球哨",
+        "en": "Ball Whistle"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Ball Whistle.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Ball Whistle.sfz",
+          "gitBlob": "57583c754a81dd7bf98d37733534a37de0d4fccb",
+          "sha256": "1074159ec33c32c912de9f269a7e81275ad872d05f598a4360134e17e0fa90bd",
+          "selected": true
+        }
+      ],
+      "sampleCount": 2,
+      "sourceBytes": 554332
+    },
+    {
+      "id": "instrument-vcsl-baroque-alto-recorder",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Baroque Alto Recorder",
+      "names": {
+        "zh": "巴洛克中音竖笛",
+        "en": "Baroque Alto Recorder"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Baroque Alto Recorder - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Alto Recorder - SusVib.sfz",
+          "gitBlob": "46a9a12b8abf356b20c6c683c0e7c6a9f52a09b0",
+          "sha256": "b5429f30d2049daedfd5b3c0271e2dec268d815ba9033740c01442ec730a044e",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Alto Recorder - Keyswitch.sfz",
+          "gitBlob": "7adb985a7d54db2eb1aafff0879c923089b9b9b7",
+          "sha256": "781c5f402b61a33f09107bd4f0c0291e9986dcd161b8f3b0dc71d95f8a2ee2d0",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Alto Recorder - Sustain.sfz",
+          "gitBlob": "db1711abcb8c259f5f4c7d4bd381b5ec8f1979bb",
+          "sha256": "5e5477d23697a3e98efe6521a0ea682e8765daac26a248772366f02de6c1ab7d",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Alto Recorder - Staccato.sfz",
+          "gitBlob": "0c3f9ecf2b099c8c4842f48ebbffa8ffac7555a8",
+          "sha256": "73e961ccc552ac41d29ee042863ac4b8e3bff57b071dddf3f847ce45072ccf02",
+          "selected": false
+        }
+      ],
+      "sampleCount": 36,
+      "sourceBytes": 56302512
+    },
+    {
+      "id": "instrument-vcsl-baroque-bass-recorder",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Baroque Bass Recorder",
+      "names": {
+        "zh": "巴洛克低音竖笛",
+        "en": "Baroque Bass Recorder"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Baroque Bass Recorder - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Bass Recorder - SusVib.sfz",
+          "gitBlob": "65f81d537daeae059c29644a46fe8aa2fb48d08f",
+          "sha256": "675d871da84e05ae506bbe77de831bd48525f09e993cf1417c47eb756d278df8",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Bass Recorder - Staccato.sfz",
+          "gitBlob": "3b9d8abb1944d2149125fb9fa72e721f8c8bc22f",
+          "sha256": "4429688a83aa56f727d635a80b83d4b4e58b1e4efcb8023b90e53a409418a391",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Bass Recorder - Keyswitch.sfz",
+          "gitBlob": "46164d4fcb6cc58668892176f24d4c594eb82817",
+          "sha256": "64ad1bcaaf14cf1fd202ba92eb94c7739ddb3d3f786fb487d8169a2594f89401",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Bass Recorder - Sustain.sfz",
+          "gitBlob": "2f8f9a2e1207707c5fead0890e5b957255d369eb",
+          "sha256": "e849ef15e8c0e555285108a7f6bb723089a04150ded28046b19401efa338d988",
+          "selected": false
+        }
+      ],
+      "sampleCount": 41,
+      "sourceBytes": 27280924
+    },
+    {
+      "id": "instrument-vcsl-baroque-soprano-recorder",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Baroque Soprano Recorder",
+      "names": {
+        "zh": "巴洛克高音竖笛",
+        "en": "Baroque Soprano Recorder"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Baroque Soprano Recorder - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Soprano Recorder - Keyswitch.sfz",
+          "gitBlob": "9bfa4a6a1eba73cf614ddae0bf552d254f957830",
+          "sha256": "fb87b11645cc7a9d779aa517acb817ccf2cd0a7b2bfa93530aecc710948266a1",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Soprano Recorder - Sustain.sfz",
+          "gitBlob": "b87bf35e8b6d5b16da8d4769db2a934b85df973c",
+          "sha256": "f56f6e1913e422a9d0acd439b03ba327848127e96614da8f1de2c7804a06e171",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Soprano Recorder - Staccato.sfz",
+          "gitBlob": "f0f01051a6e9b844a26b02ad33397c0bcb7dd9c7",
+          "sha256": "aa62824fc6ec4c5b2ee7fbf0ee3eafec8bab4a1ce8ada3d7eaf8b3efcd08a50e",
+          "selected": false
+        }
+      ],
+      "sampleCount": 25,
+      "sourceBytes": 30983584
+    },
+    {
+      "id": "instrument-vcsl-baroque-tenor-recorder",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Baroque Tenor Recorder",
+      "names": {
+        "zh": "巴洛克次中音竖笛",
+        "en": "Baroque Tenor Recorder"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Baroque Tenor Recorder - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Tenor Recorder - Keyswitch.sfz",
+          "gitBlob": "84acb737f24871d4809477eb4c4756b5e8253eb3",
+          "sha256": "deaf5df09c17ff1804ed622eb6db5931ba3ef0f32c9a9f51c6cb24d33456158d",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Tenor Recorder - Staccato.sfz",
+          "gitBlob": "d9732b09c40bf54a47f5c7aaf432e09e5843a9c3",
+          "sha256": "015f7cbc0fc702d74e07125436e1504d32b3349320ad38f126c7c69e2d7252ae",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Tenor Recorder - SusVib.sfz",
+          "gitBlob": "5d31483001db4bc8614a85afae5ec27abb203be3",
+          "sha256": "d14ea577435c9721bc2a906a8f8956db7758e6a0b83f1d3ab0267077cf1cc13c",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Baroque Tenor Recorder - Sustain.sfz",
+          "gitBlob": "fa1c49004a5d5cb91edac6f57ebe62bf2a2edf1f",
+          "sha256": "4cd67ae5101e7193812823046784602c057224d66059697d13e1e6fa4d9e0d49",
+          "selected": false
+        }
+      ],
+      "sampleCount": 39,
+      "sourceBytes": 36542160
+    },
+    {
+      "id": "instrument-vcsl-ocarina-small",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Ocarina, Small",
+      "names": {
+        "zh": "小陶笛",
+        "en": "Ocarina, Small"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Ocarina, Small - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Ocarina, Small - Keyswitch.sfz",
+          "gitBlob": "bb9966acd8a1a6df98707a753542e2c1b70f2e1c",
+          "sha256": "2d8da1d109d9461628ac9ea2648de44840960413e179845cff3bf44bd22535c5",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Ocarina, Small - Sustain.sfz",
+          "gitBlob": "55e3f4b006280e140ba70b8ad6f1bb120f7837a5",
+          "sha256": "19e924123d22ffb79198d25e6783e41d8557379af3d8312346fa95742573ed44",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Ocarina, Small - Staccato.sfz",
+          "gitBlob": "74853dacb7232847d1cb0b2299501d5bb1b27127",
+          "sha256": "2e3de138916efb000d21473330dc416380a54ce160f8e6f6b88ce65e0c822be1",
+          "selected": false
+        }
+      ],
+      "sampleCount": 23,
+      "sourceBytes": 43704040
+    },
+    {
+      "id": "instrument-vcsl-ocarina-typical",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Ocarina, Typical",
+      "names": {
+        "zh": "标准陶笛",
+        "en": "Ocarina, Typical"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Ocarina, Typical - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Ocarina, Typical - Sus.sfz",
+          "gitBlob": "3176887b599c2a8312c4e93a2ad616fcc606bca0",
+          "sha256": "7d38daf8025e57245b50f817c9f256a6a414f70959cdc21d4151ccd77d3f24bc",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Ocarina, Typical - SusVib.sfz",
+          "gitBlob": "609d67b01d87ae73670b97adac44e38073e53c5d",
+          "sha256": "307be82c04831a0c9a4d62c1f554e918ca3f0d6f6b374963327950230cadc9ec",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Ocarina, Typical - Keyswitch.sfz",
+          "gitBlob": "bc61de3fd1cab34f1c54799b151abe880fe5a18f",
+          "sha256": "39279d18e1a2477736f6e26babb17b325382bfd41d679943a41fe417f2e44d1c",
+          "selected": true
+        }
+      ],
+      "sampleCount": 42,
+      "sourceBytes": 44618964
+    },
+    {
+      "id": "instrument-vcsl-pipe-organ",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Pipe Organ",
+      "names": {
+        "zh": "管风琴",
+        "en": "Pipe Organ"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-keyboards",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Pipe Organ - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Pipe Organ - Loud Pedal.sfz",
+          "gitBlob": "8a8a805b56e6fb261c9fe32f5bc5e7fb6bb07790",
+          "sha256": "7d5d7b7205b5e79fe832aea427ccfc500586a6c9f5684cee9c1b26db828ebfe7",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Pipe Organ - Keyswitch.sfz",
+          "gitBlob": "0984f05fe313760889e05c77a589f9474fa3089d",
+          "sha256": "2255714c01f3c90d67aca2e11d2376358c00c6b45eb40a1e138c797ae795961d",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Pipe Organ - Loud.sfz",
+          "gitBlob": "32f2c45d7a8f6f8193cdc8bf35028a328012b310",
+          "sha256": "6fb466b55f61396bcd352c10974de9e00a24aa96936b45bf3754a565fe3384b5",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Pipe Organ - Quiet Pedal.sfz",
+          "gitBlob": "6f02931b64fe50bf36d0f9c74098e2cb04103271",
+          "sha256": "1983651f838e93bc9838b0bb4e4ad2739590078decd99717de2aa0a411fe8bd9",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Pipe Organ - Quiet.sfz",
+          "gitBlob": "b8588769dc5530c4ca2a4fd6eb46c36de175a2d1",
+          "sha256": "cb6b5ac831e23c4dc8ba2a4af36207620e093cd77361cccced34710a510c8229",
+          "selected": false
+        }
+      ],
+      "sampleCount": 64,
+      "sourceBytes": 138519112
+    },
+    {
+      "id": "instrument-vcsl-renaissance-organ",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Renaissance Organ",
+      "names": {
+        "zh": "文艺复兴风琴",
+        "en": "Renaissance Organ"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-keyboards",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Renaissance Organ - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Renaissance Organ - 4'+8'.sfz",
+          "gitBlob": "bef67dba941c54379baa932822d623624de6b90b",
+          "sha256": "a77e889314e029d08ff36f23c0e37e7097caebcd599eba2e129db28412e95f22",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Renaissance Organ - 8'.sfz",
+          "gitBlob": "169c1199de7c21ff20fe7825164503fa5e8be915",
+          "sha256": "402a46530f4c2130c77f673667c40dff25f6adedd9e88f29fc2a38ff50ee598b",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Renaissance Organ - Keyswitch.sfz",
+          "gitBlob": "d4becd915c99153f88f8a5881bf5626967a92892",
+          "sha256": "8ef9384b78af9d7efb23e6df8038d85552ad170a755905b5d0424cebf21cd020",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Renaissance Organ - Full.sfz",
+          "gitBlob": "262889be5525c8bf93e4546706231c7240a02c06",
+          "sha256": "10f5264d78257e379a56e0594600f8c585efecd09141f8f6361373b9e33ecb88",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Renaissance Organ - 4'.sfz",
+          "gitBlob": "83df539bc7130092fb602bde1ea2d4cf4ef6efe5",
+          "sha256": "baaaa82baf86bf9ec39f98e29414a4d99334e09877af3bd75b14c421ccbeed3b",
+          "selected": false
+        }
+      ],
+      "sampleCount": 81,
+      "sourceBytes": 145481862
+    },
+    {
+      "id": "instrument-vcsl-train-whistle-toy",
+      "sourceKey": "Aerophones/Edge-blown Aerophones/Train Whistle, Toy",
+      "names": {
+        "zh": "玩具火车哨",
+        "en": "Train Whistle, Toy"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Edge-blown Aerophones/Train Whistle, Toy.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Edge-blown Aerophones/Train Whistle, Toy.sfz",
+          "gitBlob": "a03e56555778bc1a829a1a85b13c5776d29dbb71",
+          "sha256": "6a3eedcada5871fee7ea626e4287ea5ec392c4ba7593e09d529cab6927ea7eb5",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 1965332
+    },
+    {
+      "id": "instrument-vcsl-harmonica-hohner-special20-c",
+      "sourceKey": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-C",
+      "names": {
+        "zh": "霍纳 Special 20 口琴（C 调）",
+        "en": "Harmonica-Hohner-Special20-C"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-C - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-C - Normal.sfz",
+          "gitBlob": "323f30171c256789f20b8e63d6e05b36bd89a172",
+          "sha256": "06caf9eb93bf14997ba202911147de1cec52b613e76e069fd317085192157d02",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-C - Soft.sfz",
+          "gitBlob": "2b6b9dd997c0836707bf17f6e792a65f505d731f",
+          "sha256": "1e3e746912d23eab81cb2ad1e3a616016585ef7c7bc7e4b0665a753fd662c680",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-C - Keyswitch.sfz",
+          "gitBlob": "7178597f42c4f6c42b849cc5f921543accea1223",
+          "sha256": "ddae7215822c7dbec1f97918f36af6402c96cf45ac35ad4e0df1c72231ae651e",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-C - Vib.sfz",
+          "gitBlob": "dd06c991981e3fe4940f274fd40384685d2baaac",
+          "sha256": "4249ba4adf3710fd212fbb1a84b74b790999bece2de3f2943f71158a79139956",
+          "selected": false
+        }
+      ],
+      "sampleCount": 58,
+      "sourceBytes": 22333512
+    },
+    {
+      "id": "instrument-vcsl-harmonica-hohner-special20-f",
+      "sourceKey": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-F",
+      "names": {
+        "zh": "霍纳 Special 20 口琴（F 调）",
+        "en": "Harmonica-Hohner-Special20-F"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-F - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-F - Accented.sfz",
+          "gitBlob": "ec27c66cc4d7048c4d3d7576054abc9e24df05f0",
+          "sha256": "730add2f590a8489146dc62607cdea64eef29024c914351fade820a29eb4163a",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-F - HandVib.sfz",
+          "gitBlob": "d8d0593fe39d111365c343b6261798c57b929495",
+          "sha256": "fe355c2499bc03726719dfa960918f1f09ea8b53d8156f06bdde0513b0ce7845",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-F - Keyswitch.sfz",
+          "gitBlob": "fc3f64494f06367080116c04c346c4ff36d5fbec",
+          "sha256": "a726703cc6ad69ff2d7f9151f3b5a456881e0e526c7928c5b43af806fe44203d",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-F - Stac.sfz",
+          "gitBlob": "d52acd2aa0f8739454ac18006583354f64985d6c",
+          "sha256": "e9340c0534922b682b0862139da52b7021bdfd77f9b591a876d08b1d6cb5ead7",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-F - Vib.sfz",
+          "gitBlob": "19c00e61d28b76b01cc68aad8bbe0988de6015e7",
+          "sha256": "ee40a81f7a15a8b73e3871f12c5ed1bdc95ef0c2e21ed050aa32e6839515ac29",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Special20-F - Normal.sfz",
+          "gitBlob": "2ecf9ca2c29ac24ab5fb3416bcf09aa20d2194fb",
+          "sha256": "2a11a9925d10e25e932ca64333ebfe3640338088512ce0370e86e4832e77c9ae",
+          "selected": false
+        }
+      ],
+      "sampleCount": 94,
+      "sourceBytes": 33643474
+    },
+    {
+      "id": "instrument-vcsl-harmonica-hohner-super64",
+      "sourceKey": "Aerophones/Free Aerophones/Harmonica-Hohner-Super64",
+      "names": {
+        "zh": "霍纳 Super 64 半音阶口琴",
+        "en": "Harmonica-Hohner-Super64"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Free Aerophones/Harmonica-Hohner-Super64 - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Super64 - Accented.sfz",
+          "gitBlob": "ba44d2bb62c20c908f0c1ec69bb552582ce6884d",
+          "sha256": "978f4dd24da80f9272aa9f907ce6eaa38509d93fdf915f8fd77179a2e851396d",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Super64 - Normal.sfz",
+          "gitBlob": "8eea660679e009b68189a48c26992a82dbdb4586",
+          "sha256": "511d2267c1d7ee599b1e02f6632f86098a39fa1466fa1e1f5f0df0f60f90490d",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Super64 - Keyswitch.sfz",
+          "gitBlob": "55d29eb005966ba3afb178c78f5b39ab28011a05",
+          "sha256": "19ab004db7a1004506075942aabf123fc40eafbd7f9123d5409dd00befb1d619",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Free Aerophones/Harmonica-Hohner-Super64 - Vib.sfz",
+          "gitBlob": "d3d5113270ee9cded3e77a036e73f9253da4e9fe",
+          "sha256": "e6e84f6b37ddb7b0a829489ff88976aa61639fd3c9ffb53e4c5e6dfe3a4543f5",
+          "selected": false
+        }
+      ],
+      "sampleCount": 78,
+      "sourceBytes": 28924908
+    },
+    {
+      "id": "instrument-vcsl-siren",
+      "sourceKey": "Aerophones/Free Aerophones/Siren",
+      "names": {
+        "zh": "警笛",
+        "en": "Siren"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Free Aerophones/Siren.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Free Aerophones/Siren.sfz",
+          "gitBlob": "4df9c21f5a947109c06c8ba5a41e1b0aa7b6a443",
+          "sha256": "738727ab49a0fe18e6ed77c8d31e7681ffbfb51233f797f4d0c6d4da00564fe4",
+          "selected": true
+        }
+      ],
+      "sampleCount": 5,
+      "sourceBytes": 5923740
+    },
+    {
+      "id": "instrument-vcsl-didgeridoo",
+      "sourceKey": "Aerophones/Lip Aerophones/Didgeridoo",
+      "names": {
+        "zh": "迪吉里杜管",
+        "en": "Didgeridoo"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Lip Aerophones/Didgeridoo.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Lip Aerophones/Didgeridoo.sfz",
+          "gitBlob": "f7fc47adc5635284bbf31e087f895fc9edf114d4",
+          "sha256": "8b2598e44d8bd7704b21b25a4fc2cec049c548c4ed87124b074a6a0d429f7cd7",
+          "selected": true
+        }
+      ],
+      "sampleCount": 12,
+      "sourceBytes": 27334440
+    },
+    {
+      "id": "instrument-vcsl-saxello",
+      "sourceKey": "Aerophones/Reed Aerophones/Saxello",
+      "names": {
+        "zh": "萨克塞罗管",
+        "en": "Saxello"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Reed Aerophones/Saxello - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Reed Aerophones/Saxello - Keyswitch.sfz",
+          "gitBlob": "cc432bdba3d2603613de880d24d96e3322932fd4",
+          "sha256": "a9925a7055612479d322b75e7ec0628832fa568b7939c426fc22308ea570d63e",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Reed Aerophones/Saxello - Staccato.sfz",
+          "gitBlob": "291e17d581d81b244477ada7c07f3a1018a662ef",
+          "sha256": "2b1e10abefef3ce537c77e5c087719d7799f4981ad0fd8ce6f0f9a0dbb931397",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Reed Aerophones/Saxello - Non-Vibrato.sfz",
+          "gitBlob": "19d6d2e1b7873b8b64f4aa0f7a7b8dc97573ee44",
+          "sha256": "014f8a80f05a54258bf0127cfa20b9c9df09fac531728ea945cd51f124340c9d",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Reed Aerophones/Saxello - Vibrato.sfz",
+          "gitBlob": "1d65adb9a30888ee35e34c82fa6f0ba5a88f3a27",
+          "sha256": "ea69f5ea087beeb18b7fedcde9b95cd1284f8bc08e18c99c4a0aaba03e0914ce",
+          "selected": false
+        }
+      ],
+      "sampleCount": 39,
+      "sourceBytes": 40335630
+    },
+    {
+      "id": "instrument-vcsl-tenor-saxophone",
+      "sourceKey": "Aerophones/Reed Aerophones/Tenor Saxophone",
+      "names": {
+        "zh": "次中音萨克斯管",
+        "en": "Tenor Saxophone"
+      },
+      "category": "woodwinds",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-winds",
+      "sfz": [
+        "Aerophones/Reed Aerophones/Tenor Saxophone - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Aerophones/Reed Aerophones/Tenor Saxophone - Keyswitch.sfz",
+          "gitBlob": "1f35aaa0a677f9cc13360ad4b560d294a307477c",
+          "sha256": "011e6c83fd8cafc2671154b9a803bf443e20450483cf13dbdbabac357f4a79f4",
+          "selected": true
+        },
+        {
+          "path": "Aerophones/Reed Aerophones/Tenor Saxophone - Vibrato.sfz",
+          "gitBlob": "98fb1c7ef91a259d1e558985486e0b4899769a0c",
+          "sha256": "b7485006ddab05bb75652f6b8cb24a7cebb3c934510a3d650c4ab2fa42da46e1",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Reed Aerophones/Tenor Saxophone - Staccato.sfz",
+          "gitBlob": "c981fd3c09162e6e9332cb9480a10dab20524ef8",
+          "sha256": "44a92817ed576f281aba2d4e45345794053cbb5a6babf19bf62868a24a04a9a7",
+          "selected": false
+        },
+        {
+          "path": "Aerophones/Reed Aerophones/Tenor Saxophone - Non-Vibrato.sfz",
+          "gitBlob": "dd874ef0e8e9b66320f6411b76bccf74501d14b0",
+          "sha256": "c300ebf9c2fe84d9bb88cedf0fb9b10c044d1ae3310936fac4bda0703fd2be1b",
+          "selected": false
+        }
+      ],
+      "existing": true,
+      "sampleCount": 105,
+      "sourceBytes": 140308422
+    },
+    {
+      "id": "instrument-vcsl-concert-harp",
+      "sourceKey": "Chordophones/Composite Chordophones/Concert Harp",
+      "names": {
+        "zh": "竖琴",
+        "en": "Concert Harp"
+      },
+      "category": "strings",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-plucked",
+      "sfz": [
+        "Chordophones/Composite Chordophones/Concert Harp.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Composite Chordophones/Concert Harp.sfz",
+          "gitBlob": "b16a2e8142333066d6a40e2d5b50a1a20e77a037",
+          "sha256": "7d202064c7d264edfc14a0d2d0a56e47c7689c0c5eb485bec677bd7281d643e7",
+          "selected": true
+        }
+      ],
+      "existing": true,
+      "replaceRecordingEntryIds": [
+        "builtin-recording-06-harp-1-C3-single-hit",
+        "builtin-recording-06-harp-2-B3-single-hit",
+        "builtin-recording-06-harp-3-C5-single-hit"
+      ],
+      "sampleCount": 45,
+      "sourceBytes": 76694972
+    },
+    {
+      "id": "instrument-vcsl-folk-harp",
+      "sourceKey": "Chordophones/Composite Chordophones/Folk Harp",
+      "names": {
+        "zh": "民谣竖琴",
+        "en": "Folk Harp"
+      },
+      "category": "strings",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-plucked",
+      "sfz": [
+        "Chordophones/Composite Chordophones/Folk Harp.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Composite Chordophones/Folk Harp.sfz",
+          "gitBlob": "373c830d2c5b74fdc3e378752cff32fd24a9cbce",
+          "sha256": "51787cb61af7cf75b12cf780a4bc7dc4c8b27b26a6076e24a26156df22fb4eaf",
+          "selected": true
+        }
+      ],
+      "sampleCount": 58,
+      "sourceBytes": 83187048
+    },
+    {
+      "id": "instrument-vcsl-strumstick",
+      "sourceKey": "Chordophones/Composite Chordophones/Strumstick",
+      "names": {
+        "zh": "Strumstick 三弦琴",
+        "en": "Strumstick"
+      },
+      "category": "strings",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-plucked",
+      "sfz": [
+        "Chordophones/Composite Chordophones/Strumstick.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Composite Chordophones/Strumstick.sfz",
+          "gitBlob": "a424eaaa8f68d8829f1aaf9dac4171fa5ef465e7",
+          "sha256": "450e4ab1a58136191b51dadd2de5c3f0ddb01edacfbcb3fb28e8b619defd3a09",
+          "selected": true
+        }
+      ],
+      "sampleCount": 57,
+      "sourceBytes": 89522826
+    },
+    {
+      "id": "instrument-vcsl-dan-tranh",
+      "sourceKey": "Chordophones/Zithers/Dan Tranh",
+      "names": {
+        "zh": "越南筝",
+        "en": "Dan Tranh"
+      },
+      "category": "strings",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-plucked",
+      "sfz": [
+        "Chordophones/Zithers/Dan Tranh - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Dan Tranh - FX.sfz",
+          "gitBlob": "ed620fcfd0a0546b85f7c033ad88ce2d4d8844dd",
+          "sha256": "e525665fa97fbb010ebbfd5705b9bfa6549a14b40e92b3d49e2edea915b5dedf",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Dan Tranh - Gliss.sfz",
+          "gitBlob": "6cbcc4467bc66f5a8325a7a7ada517b8f89da613",
+          "sha256": "0682644213d1d7307da7fa427d44bccd50c153344d907d9bc38fc0298a3132b8",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Dan Tranh - Normal.sfz",
+          "gitBlob": "db0f45acc52fd59f0d71a97c38af70b69c96128a",
+          "sha256": "015fb028e7b7e4ab3357c6ada79ec20c77370864327b932788d616dba2e4875c",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Dan Tranh - Vibrato.sfz",
+          "gitBlob": "e4972761cd6e7e36ee0eec049da9278863190127",
+          "sha256": "93e9ccd09d0da0deea1b95ef95d921ed5d946f92c440c43d45883a1539eaa8ec",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Dan Tranh - Keyswitch.sfz",
+          "gitBlob": "b5ae050874659eaff42432ecc27b2824290d1e6b",
+          "sha256": "7f130919742ea0589d4533b5a13e39f5f9631bb936aee988dfb715adee6e2ca2",
+          "selected": true
+        },
+        {
+          "path": "Chordophones/Zithers/Dan Tranh - Tremolo.sfz",
+          "gitBlob": "e341a322fb53fb0bbb4d7beca6985fada51e29ac",
+          "sha256": "db8baf74a015081989cd2275f5a6b31b0b54e103603de5dfd8a4ce9402a4d98d",
+          "selected": false
+        }
+      ],
+      "sampleCount": 115,
+      "sourceBytes": 100963649
+    },
+    {
+      "id": "instrument-vcsl-kawai",
+      "sourceKey": "Chordophones/Zithers/Grand Piano, Kawai",
+      "names": {
+        "zh": "卡瓦依大钢琴",
+        "en": "Kawai Grand Piano"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-keyboards",
+      "sfz": [
+        "Chordophones/Zithers/Grand Piano, Kawai.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Grand Piano, Kawai - Legacy.sfz",
+          "gitBlob": "bf70bc04fc78575dc932832a08d251d423042627",
+          "sha256": "f2a3dbe2ed94472e107647b1f6470515f9be806af23612ca0e4293e75b0cbd58",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Grand Piano, Kawai.sfz",
+          "gitBlob": "bfce858b55c8d14a08cb85530bef60899605218f",
+          "sha256": "b1d4cce59495b2126db043cfc9d8256313795677a5ceda4c24cdb9acaa379488",
+          "selected": true
+        }
+      ],
+      "existing": true,
+      "replaceRecordingEntryIds": [
+        "builtin-recording-94a26a7c67e2e635027d38ccd93884d1384a678b426168d84405e6e15fc8174e",
+        "builtin-recording-ef0a5d6433b06214b9d4272157531a6ca1aed4aa1847d100279feebe68057db7",
+        "builtin-recording-929ea76d037733811106a615536013a1e36ba4c278c68c63453a556766ea22d8",
+        "builtin-recording-a4ce969e399dc6713bfdef5757abc148a481d24e451eb0ac5754dafd7656ff00",
+        "builtin-recording-a42ceab22a98d2c3690641164a76cf34de9082efb9e8662c91b19c06a4e9119c",
+        "builtin-recording-d5d462af25fc34748228f251499810c57ea0c4409c88060a8960de69707a9a7c",
+        "builtin-recording-ec6ae2a3bb4805f682d1738505f0788d766bc34509a1d6feea2c2986d81b9df8",
+        "builtin-recording-1c95db0609262ee261b4eddec5f96718418ad7204115086293026c46e729bf20",
+        "builtin-recording-bf574f294553debf69c2e196b1962c631fd70d8252157785864bd5245554b898",
+        "builtin-recording-b9556014dec2bbef80a61d9edcc625206338d9c9da9dcb9be38a845221c36e73",
+        "builtin-recording-0e4b6f15818dabe7b32fd58a4e0c60eb6beb7be06ad608dfa2745f53cd4f3c68",
+        "builtin-recording-34f5a4809516574233ab35414d30a1e7acd8a459593a57ea6dab3761434fdcf6",
+        "builtin-recording-03368d72e36f8a6252552651e86dad5b15c5b2ea3e2111ea360b5b4c09510630",
+        "builtin-recording-7ac18b32409f7694ca577128e98e4b7edad3e072b34cb83ad8f61271d833d208",
+        "builtin-recording-4e460c846441856e50c55efad5a9943f8f3d1c6508daced07797f87126538fe0",
+        "builtin-recording-ffe263f1636edededc0922f495eb1ed592fc2b976618bf025a1f3bdb8209ef3b",
+        "builtin-recording-55495f018e0993e1beb71c8b866f4a6be3cafdcacb75be548a849a37414f79ed",
+        "builtin-recording-b05383c7bbf1875b477b46a132ad887cba60124a0f9dea11522194dbb6d5f0c6",
+        "builtin-recording-448f36e4be258f023215000976a24dda75650e66d4bc2d13fdaf5aca8e840d54",
+        "builtin-recording-eec1dfb203bd617f7c94e6212cd3a792271db3209fc7e000b8e8c87b529c6493",
+        "builtin-recording-1e4a6d9bdb695d9f115f0f4ff01223fbdfcdc313636de22fc364571be85b93e9",
+        "builtin-recording-541d352a26e9c0cc69d99e3526d2c6cf1f657c6955ae7b387921f685bf4541b2",
+        "builtin-recording-7136342a2d7e4e3b2ee1b9ff90d6d0ea0ace694d5a6f1770a56af08afe15f253",
+        "builtin-recording-bcab1c9a1e73e393da295c4ace4ef269d75fb004e347890a494b93c4e3c0c042",
+        "builtin-recording-8edc3cfb2600bffdbd02fcbbac588a52cffbe6868afed0e4e2b0fa8dcbc10d0a",
+        "builtin-recording-0cfdaae001a66dcfe290b82b0274e1335173b5d80d09888b0c5b600c93955498",
+        "builtin-recording-83ba4782ce6d0e4a66ea0a06964c3597ca760e0bd0e4192229fb7347b66e88cd",
+        "builtin-recording-f4e04292aca1bad9a02fb58ff1c5ae9a3cf72a9022561b6c9a77811e75c0f78c",
+        "builtin-recording-a2eb867cf5c17ecc9b8d7a6accabc75dfaeaf30418d2807b2f999509ea4f95ea",
+        "builtin-recording-ac0a58be4a5a469d4161172fa502c9a26c94006db948fb264f60002aa5698c38",
+        "builtin-recording-30796c5010bc638f33fb4353ae1dea88cde5c1fd5def490b75c98d072224010e",
+        "builtin-recording-0867a764b52a52ce64d6d9a80549011babb90c15b68a53ec094b5387c6e233e4",
+        "builtin-recording-0f0cd4a5116a663b6f036bc007b72f3fd100861a76721f008f9ebb2bb1e47630",
+        "builtin-recording-28c5eaffac962567670dba41e2ea91781263cef29e827c66159d5ac7e84262b6",
+        "builtin-recording-f5c01ca5f5d756f5a24c4564e830e3c33c5a4caea172f83200e9b0090bd024b4",
+        "builtin-recording-d0a8cd7ac0c94150599b6f4d1057206ec4e937a0a063841729685f2d63b9fd9f",
+        "builtin-recording-154f2e5f63eefe0efd1f544397d031bc3be3cf8d5f85e9e86f6af7a945e8b2a4",
+        "builtin-recording-998795361e28fc192d61a253ae88b40203eb337a9ce4f699a39d517f56bb1cd0",
+        "builtin-recording-2f303f50b4e90041bac35d6e32eb09e13251162e777f3fb82c1075c6f095d0b1",
+        "builtin-recording-a375ab191a1ea5f6b87e3a14dd631cc3b8cb1c096d37c20aa2a3c06056669282",
+        "builtin-recording-d27d1682c813c8dde54aeda9937fcc7ae72b971382ec809429ad1af103fc4937",
+        "builtin-recording-7a40cde4c3825c7adf86f900a2f2e0d50ec91b575d01c1da4b695e9605bf6e44",
+        "builtin-recording-8dbcc5f73a62bd9eab56848589114e9c2f328ae63a25ed8c0e041afa888131ae",
+        "builtin-recording-2625e7970c280a657bb43c6bb14ae8e8b0f3bd9bc6f5be11d2f22b53df42aa0d",
+        "builtin-recording-a2b7ed35d0037dcd406c7fa44c3bc18bdb6cbd114281c34d6ae2f805ce9ab7e3",
+        "builtin-recording-b07d2a784f13a93a7f7d14af4434e4606223757f46054bad5bcb689da4394545",
+        "builtin-recording-2d66dcabfc8c2686cb6031314249b84fe94428276684892686bb174fbcbe3664",
+        "builtin-recording-0cd8f06767f7e6af8450e5dca8faea7194a4902f2607cdb2677fe6a8ca76584a",
+        "builtin-recording-450414de0d3232254a48b7782c0b6376aeac548faab847d09d7fd18211189ac7",
+        "builtin-recording-1a466157fb3c7c51f6cba664b5872b8fbc1f357af1a46fde58f6f81927e9e06a",
+        "builtin-recording-d2cf5c18183d7e002ce3ce2444cb35dfc35f53e129c1fbcb2bd62c69287023aa",
+        "builtin-recording-8d5d2d1803493d535bfc2989c0a87186fa1272919e0f870fb8e470225424ae93",
+        "builtin-recording-9cfe944a343a0e606f0b9c1adadbd28e933e67875ff1d16d39e173b8ee2fd3ef",
+        "builtin-recording-86dbc0577e1e74fbf1ddf130a1ef2ba9916d48888cc4024c6b67c3b9aafe4e44",
+        "builtin-recording-4fc51dcfe459a297060827fc914112a1ee7f43e2281eebef560469260a428991",
+        "builtin-recording-757fcccc319d8a4e944d6e230de5f228ca418882ee4d83b4f0a5241cb022edce",
+        "builtin-recording-847b594763f481c3b0b911b15257877c2b1c15d2ab5ed66d5bca05cafaf50d44",
+        "builtin-recording-97e9c98f281eec6385979905129d55743372adcce15f4f7563298a3032cb65af",
+        "builtin-recording-6a9c3e99e6ffcc0e9c9e26abcf6a7fcd1cd90e368f9851333542d090622fdcbf",
+        "builtin-recording-77512f4fab78525c4d3c1eafeb5dabac653f1937021eda373f5003432ee65e3d",
+        "builtin-recording-570f797d5e7acc1cbd2ce954e10c9b080bfb3910a0759327499f45a111f734cf",
+        "builtin-recording-8a6f8e13253731014abb729b6ebe9fad7edefbcc8c00fc73f504b92160c001e7",
+        "builtin-recording-738c2841cf40f3326cb6f943354164f06209dbde0af332e9f7f11d9135651e0e",
+        "builtin-recording-794ae565a84c2a5602cf0d592b1472a040c87ffd0d6dc770c0d1a02a2a4cd7f6",
+        "builtin-recording-41e3212832d96e18a840a106e090574b2f2ffa4f7e1773fcd425258dde1488f0",
+        "builtin-recording-0caf808436e2b4417dbaa79fc39612586e7d3c1e90f54078d0563eefcda5f3f0",
+        "builtin-recording-20240e444be3d0b0dcee29c4af4b1e7e41eaec474edfa8e2c997e74ea638d147",
+        "builtin-recording-699719f331031e427c8b09cea7ee010ba56eab9e469932d103e2c4c3ac53f730",
+        "builtin-recording-0d6ab26d446c50739ce7ae62b128cd868059a6e17760fc844c4363db426442e7",
+        "builtin-recording-44fd8166e58b9fa7fe830d53384240632b3506562ec99deaacf6deccc6f27f9c",
+        "builtin-recording-7c8c4bcd1889e9df79bd773d40746e006ee623ebed6f4309d4636f308016ed0c",
+        "builtin-recording-567bc9fe705a2a1ca53224209fa51c2661fd2e86b1d0f4b2f258aaf9ae8a5cfa",
+        "builtin-recording-c37b7a0f65a34217d75b645739b780e46fc2261701bd749bc2d1d71026db2706",
+        "builtin-recording-9c0d9aa30eb4eff32bbec778139c8448aa6ac7fd193ae7a1d2043da228559d26",
+        "builtin-recording-08610e662e4d981e8d2aac8c996940ff5be31b48c179c115efc036d9eeb1e090",
+        "builtin-recording-2fc8c8621f96b99a8cff368ca7ab52224e35ffb9be1a9d9bd9c7f3e895f928f9",
+        "builtin-recording-333eb553784fd4e4a19584440fc50894f5e7becd312c397d7e1363a84e50cc87",
+        "builtin-recording-86e3d4d2d811512f3071b2830fb342fcdd018005c04bf9e18e2b18a6c215177a",
+        "builtin-recording-5e92023aa4785b1cd6f72e5d407c03aa9754c619f4b594c94c2b3352d76117a1",
+        "builtin-recording-1d89911a604819cd61855e0559c1095ea1af1b39fdf503907636c9dcb78440e0",
+        "builtin-recording-88c6bbdbdd16402fee6dba6253521f89db8d96c082af8d14eeb5ed4180d5988a",
+        "builtin-recording-22bf403e628b12814256a33321f530465490bfe1af4b10b69341482a0c423e9a",
+        "builtin-recording-fc5cf859f4a94a4baa6af3448410a31b311e416f6249ca5e717a0c7ec95b6b23",
+        "builtin-recording-32eb503fcf82ac9671fbe8af5a8d50da1b9257ed03da7fa4261ff91ea3a5cc73",
+        "builtin-recording-34fbb640471293fb8fcd7e8d8aa19f6953eeab571a9950ffb5554ca2c4718ad5",
+        "builtin-recording-54bd0d056339ed6f3c430ca8b4075cdccbbbb4c9d1477a3452f64479631a4ea9",
+        "builtin-recording-cb7e2cb891c46e9488892d94d71a45deb298dba6a2b0014b8747d5fb78880de5",
+        "builtin-recording-6b8e9b320daf7a5bd709f926709b19688c22c4ec95122ca88eda5efcca816f71",
+        "builtin-recording-a5b274ca717cc6afd7fac10caf7af5b4ba80655c6f10cca1b9a730cf1c8e85fa",
+        "builtin-recording-4a1038fd0b7f34af2c3a8427d0daf8183366018f41fdbb3992c18d9ad110b369",
+        "builtin-recording-b365100d7de067cc343f31003980da6802cdb6c5697f3bbf9492d8f9b5755c9a",
+        "builtin-recording-f2eea146a367ef82083db66ff5eecb687354f503533e5777e370ce3829c170a6",
+        "builtin-recording-2884b9f00fa806112e48a76f1aa7348abf40662b003e3a78780ed1aba99486e8",
+        "builtin-recording-4a25c2d083875c6e6b415087480b49430454487c8d1aa1282ad045d576358d56",
+        "builtin-recording-40a3d83dcf1d4c7a2520e46635454aa6b76663c8dc2051786159546f34045c38",
+        "builtin-recording-6a926a096a6c7a34835c75517bb117210190a38f8dc3c26b0dafc8d5b33507c7",
+        "builtin-recording-c83d5844473f9568f5a1632b2fbf2f75b23bc51185da3ec237c6cbe647e21809",
+        "builtin-recording-7924c67c324d307e8b976e099644c47050c9c22476bef94d54e114270b779880",
+        "builtin-recording-cd109f9fc037a57dd02d5ad4ce9937b0bf5a3d07f28e13692bbaa767c74fe866",
+        "builtin-recording-298cec0253fcc7da22be86c620f1f0212ce8bae2b9699bcf444ac9259c22684a",
+        "builtin-recording-02df9b43cc070d2347edcd166c38589013b332d230e018e652d52623db0ba09a",
+        "builtin-recording-9b28ba6d6a17766e708f6aeedabdda8373044f19fe245994062d6ace4ce50064",
+        "builtin-recording-18a541f315269f503185e49303b25c2d9d6a58821c0b001fb4c249e6bf91ff87",
+        "builtin-recording-fb4f8b1c0992d2d14f1c60575ff8ca6e71f4e17f68e73804448c1045a98c1067",
+        "builtin-recording-9c8228a5d9ab68a2f8844e23ed75553f735d13b93af1a0c7f4fdabf8951faf11",
+        "builtin-recording-48477261c5462c9c0312e8bc11674614ae2df5ef51706791553c203068a8a887",
+        "builtin-recording-955ead3b97adf8f49c22082e3e68969158919a7380e6b4a8c969b866bf195ddb",
+        "builtin-recording-43ea1569957eaef8917209199111ae087a5fbbd8e3a111c34bc09d3e577a126d",
+        "builtin-recording-456f078c23a449428bb84597ff6cab34d8b1a5612fb94d6a878ac064b2383070",
+        "builtin-recording-8a1a3f74b9d39ab0ad0584ea1c539a8c3123f498f30dbda09a827213c334f792",
+        "builtin-recording-be09a6ee450a0827e97a7c3e7087ca3c8fd008eec535cc2d0392f71f43a63460",
+        "builtin-recording-fd22bdaf0bef1aab146d61c2972d673ce887485c2fcaadc7161de3c043a93453",
+        "builtin-recording-44c77793faac9bf6590797577f6039ff47973d265e1348623b8dca4dde463ab9",
+        "builtin-recording-bc2e89defd7c12a8e92435390129c624db1be237c778c80937b83837dfea9f81",
+        "builtin-recording-7d593597d52778ca7368c340432f03c27117b7b2f3cec81a9317dc9d5230ee4f",
+        "builtin-recording-ed0c8c2284e0ef45000185a2428e04399666b768a646220a964ac9b31f973420",
+        "builtin-recording-501275e817aaf2ae2e97f0a7131383884214df01fb918235387a3d547dfc34de",
+        "builtin-recording-110c05922f1cfbb96718a30db34be40687d75d2e55c1d1d46ac469e7a723e1b2",
+        "builtin-recording-dab737cdc32c7f74f764d3d98f67a1a90ce268e60fe475bd045b42cc88badc69",
+        "builtin-recording-1baa524ef8260b257ef17e8e132eb45a3e6c499dda9d8f7e85405e343e206577",
+        "builtin-recording-24ca3e867e5b8876dd20df46e267517c76c49393cf95923ddb61913a42011a74",
+        "builtin-recording-bd39e672bb790db9b25ae7653f4039499b5c3cabf6ee7c7754d9484075af3de1",
+        "builtin-recording-ea12038da3d864bbbebeccdb51198bb79afa36cb832f34981e0ece7b4ce0a37e",
+        "builtin-recording-c079b03d00b97e0b6ee9f94603c6062a912b430acbd6471d4398b064be12558e",
+        "builtin-recording-156a15ca2ef0728843f23d33ac5a352dc383d96da4c59fea2834e638c28a41fe",
+        "builtin-recording-1f7484c8bec3ba1ed8590dc85f7ad2c48794a6cfb39f4ab980679b51458226c9",
+        "builtin-recording-f5c0722d1213868c0b0c8a54434cac7e89edd9b5a06e15312d33e1af41c2a2a9",
+        "builtin-recording-c20197211dd4ddd65807cb02b30a38dd3097be28fc117c61e1f064de89ae1971",
+        "builtin-recording-5a90918c5f06c09835629643bb49f5b65ac649ce834febf76b0113476a9884c1",
+        "builtin-recording-3d536f0b98415f5db5b35d6b61366257951e418dd2433be3baef72b2d9dd2a1e",
+        "builtin-recording-b3c74ab3f798a38747fd3e383212b606b9c33d9609588f9c4c20925630c793a3",
+        "builtin-recording-b40ec4ac5a203eb14b0b6995f4d52edab18414b26d68bc9505ebf7e11d89b187",
+        "builtin-recording-1ec8a039dae5359b971b109c6adc3dec79886273b64604d2d65ad38cf7a69018",
+        "builtin-recording-f0eb48b74e07938ed23dd3ac44b7c8b8bbd889918a20803fe616ec8348ad987b",
+        "builtin-recording-ba3e500dcdc7aef2884ffaebbea634b22e2cbed5ffc6227ffb1157edf4f8381c",
+        "builtin-recording-8cb704caa349ca65e74dd9d92558cb6b4614b5ed65730ec6ede4f0c759803d65",
+        "builtin-recording-a6bac6829fd12b946b6acccc4937da6c601311d750ba5afacb92132a4f3fb8d5",
+        "builtin-recording-81647679f4e454a8fc00ba57be4d84d8e58fac919d15f10aed047d27e3fd8026",
+        "builtin-recording-56f566a53168afbc772c2a2647cf88b78b6fc872bbbe4cb1ca616723c4e15c12",
+        "builtin-recording-4e420882a8ded38e5baa870643183a3103fd0d6af326a4ecc0a0952cd1935b0e",
+        "builtin-recording-ce56dcc92387f7cc43890cd230bd88982cb91eb75d2fd140607b686e9a9501a8",
+        "builtin-recording-601265266acd47de1aae40175185660c726a63902030bb4442c942a2b281720f",
+        "builtin-recording-ea9e0c891a5d409276f433dfe98d989738978d9e3c303c8df282276450bb594e",
+        "builtin-recording-82db758bfb9762df180223060b2df908096cb98defc3799fe04376d1ab4b1e91",
+        "builtin-recording-d732c7ca392596e9d3b14a23750b4304f519195698bae196f1492042bce9a640",
+        "builtin-recording-264ad9562237c6c64e3f8a59974318b76ce283abe5731e384c8b5bcb6ef98b6e",
+        "builtin-recording-8cabd111f4f331c264fcf8975f46526efd7f1ec7410a3ff8805991deaf5d009a",
+        "builtin-recording-4a942e0c9866961ab6c60b9a1c58b893012843e5c9fd6fa911f3214d33d42926",
+        "builtin-recording-f370b7574a8991fe8b80ee54a1f64c8656a60b965a9f4bdb3cc71d918efe33fc",
+        "builtin-recording-f0f692db94c437ad3a07a4347de714f02b5b3e03d8120fcb5cd69af46b1d429d",
+        "builtin-recording-2842ec26b2b6f6dbdb5758ef59cf81acd338bb037b15cee0297176a980bde8bf",
+        "builtin-recording-0b7363d51486192d8ef118888f4403bdbfb1ca38770419763e92ae136a78345f",
+        "builtin-recording-e3701bb0d3c047e30d3c0de9ec9c5476483fbe6ee5401c241d0e7cb06cf0ef38",
+        "builtin-recording-0cfedb5d9db96f7b2b5dbd243832d5e5541803375b1a206a3347f2149702fb22",
+        "builtin-recording-357d1199343d1b4d1efb8a9fb8324bd65e16fe69cf78446b92d7ec414b2b5a18",
+        "builtin-recording-cbd784c28ff1b0118b45d6366f663dae2f93a17d0e904f27a9da7eab38a3bb63",
+        "builtin-recording-aee11bc48af752dddaf3eada031aaa2dc0b9a6ee5020042ade954fd6290a2cf5",
+        "builtin-recording-8cf52774a73c5cb8ce7080de7f383b240c84c801ab970c51e6d830aaaafe08c8",
+        "builtin-recording-76e496a89b818e6b13c779ec82a34657e9004133a1935806e17844878e6bd350",
+        "builtin-recording-48c9ee0c6d1b3083a86e018056f751db93d79f6831e28a6f116426bbb7634d61",
+        "builtin-recording-b254ab6437611f74990d25a97cb9eb6afe96e5ddf93990c3cae6d5e646993935",
+        "builtin-recording-90a8ee3dff1cf1b46b49c0cca719bd3fb01d68f957fdad61165142b6149a5980",
+        "builtin-recording-be6abeccb3e65ab191c6f7728bc0b1bdf2706e02dcd441a51badb8c516904758",
+        "builtin-recording-547aea32876f36c3b7377bd520df5864468e2c03d868a8b2c4af659b425c7e09",
+        "builtin-recording-c7accb5e91b28a3d9f42277a45ae973325354f7b4f5c756de0653616e0fd291d",
+        "builtin-recording-86502097ee6f71ac4210ff730bfc4d7b4e2af7a25f3957b3a6e916c24425f3c7",
+        "builtin-recording-82ad78d4855ff6fcfefdddcb242794fbf480dab658102160c148ae5308854272",
+        "builtin-recording-2d2ab7dbd4473d3cabe73f5a0ce57eaf2c06332f74e51a3e8011688f83a2f03b",
+        "builtin-recording-7cf0685508b689464038d035ac24da71e04730ce87e6692ff1af45848aef2354",
+        "builtin-recording-44d31504ae22726b7b8a64ba301ec3621bc0d7db19d536e8cf2c05fdc1d90eac",
+        "builtin-recording-e52f2e39d4401723ba02ec5a0b5f673e9be8899a91cf15b37a9a52aa3c07a1c0",
+        "builtin-recording-c664f6ee1e469bd5e799a6ac0510649e08e62c936a08cc1ba89f0113e94da495",
+        "builtin-recording-946e6ffc1517a12de516fce15ca2438abeac6861dcfc51505e803e38c5407455",
+        "builtin-recording-e5e547956ee9d18e36b6d16f7b5c158ba02b6b8c4099900245d4e5ae51cee6e0",
+        "builtin-recording-57a45a7f3300d0807ed537d39e8776200c3b37ff3d29c78cd42622d71a0cbb6f",
+        "builtin-recording-5acaaddf243538c9992a78883e808fe784ff05f2c125c12c31e910ac6fe21db4",
+        "builtin-recording-9ac07d4f4db042868be20201f28def084d72c105cc37b4d993967e7e9a31b7d6",
+        "builtin-recording-acea2d8397a11d0c467a9151fcc7e79a184f4e40c90f76057227eab843cde794",
+        "builtin-recording-c391886097cee0c498dea8af9d1e70bff09311fb02c6a60f5817e14a3b836e78",
+        "builtin-recording-b811a03da143393ffc64399707ced27676333f00f0b0d98fb38f347c9571652d",
+        "builtin-recording-12a63609e562f514c1e98be3cac261ba57e4269d2e04100bd4d51b82dcd72eda",
+        "builtin-recording-268f10d9cf92e8d765b46be349ed32b7ca57c36b666eb32ec4df2fbf700e960c",
+        "builtin-recording-13462f2d02a37797100b932cb64d41fe17fd255cb33de7d0c1e0a9a60c24f76b",
+        "builtin-recording-affc0faee3ab0a06e41f8b8290329ff21741a387e94f3f850df476740a9cf3a4",
+        "builtin-recording-1784bb5c1ab345172cf7f1207e6b686a1a18f0a692eaa5dcd54e8b17d739fe6c",
+        "builtin-recording-2ff790d7c68d5d043f57641ac9cef8ddbc5997d413eac40e26ceee4fcda8a9c3",
+        "builtin-recording-5196bccc24a4a02eab07892f7c5fee30031dcd7343b0abb4bc1ea72ce3d32e6c",
+        "builtin-recording-07c643ffd7b603576eb490d79b16bbe97b559be98207024185a3caf078ca5be4",
+        "builtin-recording-11e4580d2217aa3f9a49186d9bee1568837a6710f00ce3c28ad415092e913743",
+        "builtin-recording-a123bf46a5abb0e9ac10dd1f49cdb476e1de75a3467fa08ab1ecb8b88f31c206",
+        "builtin-recording-e5339544685ca62014591fdbe43a1c6b78b3dff38f3949ee4994acd3e02d0d04",
+        "builtin-recording-4b1f75478c8e905a0b40b4fc8e27489f1415547e6993319f18ef28d4ba852fe1",
+        "builtin-recording-6854d793385bd783216278b4550006ac26331f2d70ef38c8a3b51599e80980df",
+        "builtin-recording-cb1487012b037bf54a8c10557705106ccecba58a029f18cd580c62b070faf9fa",
+        "builtin-recording-a75de26be69c591db6bfe50fbc9d67bb9a58b10433caf6b8b9e9b822f1fa0fb0",
+        "builtin-recording-896c46f2fbda688e2ac161b5bfc11880beea986bdfede00840635d2d3dda100a",
+        "builtin-recording-04a49702bc211deabfac6b90992fa247a737c0513f06862146905f61c3f93c9f",
+        "builtin-recording-25aa172ca677233d5a70935aa255729c20752e0365a699dcf3b1de3de4d9326b",
+        "builtin-recording-6eb3e39ae3659a6628a601b0be8e7aefb079f53e14bf482ffcb23c5b1b3ed7d2",
+        "builtin-recording-0449ec522d7da8c4c4089ec6f63d1949d21abaf861479a4dd37de03bf20c4340",
+        "builtin-recording-01ed906e1cae2f404caaa64b2cfd8ebcc52df4209cda0fd641165201507b0d1f",
+        "builtin-recording-b91f69e47780a5ab8c092c5d486a35505c576c1172b3684871f20efe7b5e30b6",
+        "builtin-recording-a8ce396ffab7b2d1147ebb1fd99b17745c094e7bce67a1ea5a55104310d5ec71",
+        "builtin-recording-2dc97df5bb3c7a5c7d6aa91e2da4b287d4c455bf9560aebca7d2593d6f4db5cf",
+        "builtin-recording-1241ff3c6d0a7f1f07ee365815fbb54d967b56239d8de47c81f76c9f7e5545d2",
+        "builtin-recording-0c2e496f522c88a7a17acb914e49473a2190f549949266f591f59aa08ca68368",
+        "builtin-recording-8f808cce0c5ee5bcbee61ef0a0e71eb10bd7160ff6cc92b1518e5b311e4f3868",
+        "builtin-recording-45bdc4a56f7f96ed8a3660bdd5bd5e78e538fbba64f65750fe9c2c568a483d27",
+        "builtin-recording-17d607c0d85fd186262157f1ab6d04eb8b8d1d38da5ab2a84bfe343c58b8f8e5",
+        "builtin-recording-6c67e17e10d655a05acc5188b8847ee12faeec1a840b1d6816ef9ed439075bae",
+        "builtin-recording-2e17d1a22e405490a50ee7d913320f6a2d0cf7a56171b85ab9fe377fe9707597",
+        "builtin-recording-da476264ca50ab6f2824366086761e618e88a221de9760f6aa268e02775831d1",
+        "builtin-recording-775f79c6c79f74276ceadbe0c845483cccde7513ddb08a17361b029110657948",
+        "builtin-recording-0425c56b30b5a640168041fb6e551cc0681247d503ff2c0003c07a8c3ad02c95",
+        "builtin-recording-8261b78a119b1b48d6bb28edc1fe87d143620d4eb8cd596d4344353349059015",
+        "builtin-recording-95d2818acabe3f294b5ef6166d2ed11322e0ee477288e93c60297060b93b713b",
+        "builtin-recording-a5e343612a4c36ced0b5fe2ca9c09065288acbf55bce170d7b693a3d387dfe11",
+        "builtin-recording-e3fc35a01da429778ad43ff13d82539e2ed80dac053a7d62eac421b11f70239b",
+        "builtin-recording-a391d340e69cd9585f74dbd97508abb6b2b62a7778c8a1a5d8d5a2919abef4d4",
+        "builtin-recording-80a8974311d2dd3c7b781de06fb9dff1f8ecb639998ab9d9163675591367b1b8",
+        "builtin-recording-225ad38396d18555ab0fa2207c2fdc2bcbab5faa46546d73acd73cd1c3beda16",
+        "builtin-recording-7c1b8d260dfe743d64589f5d0f6ea0fc1e13e9d2ec461e3273af771f4695ff33"
+      ],
+      "sampleCount": 222,
+      "sourceBytes": 455943628,
+      "notes": [
+        "Keep the published modern complete Kawai definition; the Legacy mapping is not imported as another copy."
+      ]
+    },
+    {
+      "id": "instrument-vcsl-grand-piano-steinway-b",
+      "sourceKey": "Chordophones/Zithers/Grand Piano, Steinway B",
+      "names": {
+        "zh": "施坦威 B 型大钢琴",
+        "en": "Steinway B Grand Piano"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-piano-steinway",
+      "sfz": [
+        "Chordophones/Zithers/Grand Piano, Steinway B.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Grand Piano, Steinway B.sfz",
+          "gitBlob": "224c43d75b80595dff1bc5f78d1ee5e8a0df318d",
+          "sha256": "4cccb40dbbb16742a3308f5c96286e41eb7e2d51c4ad4b8a3418292c4c6b49e3",
+          "selected": true
+        }
+      ],
+      "sampleCount": 351,
+      "sourceBytes": 1339722744
+    },
+    {
+      "id": "instrument-vcsl-harpsichord-english",
+      "sourceKey": "Chordophones/Zithers/Harpsichord, English",
+      "names": {
+        "zh": "英式羽管键琴",
+        "en": "Harpsichord, English"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-harpsichords",
+      "sfz": [
+        "Chordophones/Zithers/Harpsichord, English - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Harpsichord, English - Keyswitch.sfz",
+          "gitBlob": "1ca2324ee150734a1998e4113201080b460b39a9",
+          "sha256": "f9ce58f316708ab6fdf736b1bcd4447385a442ec0861055f9c304bc434963d79",
+          "selected": true
+        },
+        {
+          "path": "Chordophones/Zithers/Harpsichord, English - Lute.sfz",
+          "gitBlob": "303c79883092a03b638901fede85be152357c8f7",
+          "sha256": "0165278d3da2af6d15c1611f9f2026b72a38007008c952d7edbd03c75c1763ae",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Harpsichord, English - Normal.sfz",
+          "gitBlob": "34433a19216c6759a1f107b1b82c58c268d258ff",
+          "sha256": "72a493a9e96a5ede3437c153360a38d0ab9b8dc0b1654dd3b6699507737034f4",
+          "selected": false
+        }
+      ],
+      "sampleCount": 107,
+      "sourceBytes": 90713902
+    },
+    {
+      "id": "instrument-vcsl-harpsichord-flemish",
+      "sourceKey": "Chordophones/Zithers/Harpsichord, Flemish",
+      "names": {
+        "zh": "佛兰德羽管键琴",
+        "en": "Harpsichord, Flemish"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-harpsichords",
+      "sfz": [
+        "Chordophones/Zithers/Harpsichord, Flemish - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Harpsichord, Flemish - 8'.sfz",
+          "gitBlob": "5b72850b8a15e7bbc52c7cdf864fb0eb53302059",
+          "sha256": "4bad275f70895fe9b44a629eb7c1acb36491b467ce061f09557ec740b72b5a14",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Harpsichord, Flemish - 4'.sfz",
+          "gitBlob": "47ef3c4c22c7172b60c5044e26fed8146a40062c",
+          "sha256": "ee80a70f2167c477635a3f550a831ba0069faa662fbbe54e8a1e98a91eb5823e",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Harpsichord, Flemish - Keyswitch.sfz",
+          "gitBlob": "b1529b70e8bda84324112a84f7bb3e15b1bad757",
+          "sha256": "a571d787d3c905fc359afdcb89fb6b88fb36f3acd33c00d6b35c845692587a00",
+          "selected": true
+        },
+        {
+          "path": "Chordophones/Zithers/Harpsichord, Flemish - Full.sfz",
+          "gitBlob": "9570c703eadeb3be7defd05966086b80668bcf21",
+          "sha256": "422547f034d1d9c21afae29e4e503f534df83b51c84ebad2918643ef8b360dc9",
+          "selected": false
+        }
+      ],
+      "sampleCount": 108,
+      "sourceBytes": 126183090
+    },
+    {
+      "id": "instrument-vcsl-harpsichord-french",
+      "sourceKey": "Chordophones/Zithers/Harpsichord, French",
+      "names": {
+        "zh": "法式羽管键琴",
+        "en": "Harpsichord, French"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-harpsichords",
+      "sfz": [
+        "Chordophones/Zithers/Harpsichord, French.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Harpsichord, French.sfz",
+          "gitBlob": "5b06a36b076ee4bb4a1da615cbb49197ab5a3b35",
+          "sha256": "3b5fe793fd513e48475ea54519d8f480eb6744baeef57f581b9cbb61dbb0410e",
+          "selected": true
+        }
+      ],
+      "sampleCount": 58,
+      "sourceBytes": 97149524
+    },
+    {
+      "id": "instrument-vcsl-harpsichord-italian",
+      "sourceKey": "Chordophones/Zithers/Harpsichord, Italian",
+      "names": {
+        "zh": "意式羽管键琴",
+        "en": "Harpsichord, Italian"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-harpsichords",
+      "sfz": [
+        "Chordophones/Zithers/Harpsichord, Italian.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Harpsichord, Italian.sfz",
+          "gitBlob": "d12b7b0f29b3e45d7d79b7cc267bedc11ba7cc20",
+          "sha256": "f83b4ae3c8798d04ac2e079e534abd7aaa2150243c33d36472c535cb9b408cc1",
+          "selected": true
+        }
+      ],
+      "sampleCount": 63,
+      "sourceBytes": 74940220
+    },
+    {
+      "id": "instrument-vcsl-harpsichord-unk",
+      "sourceKey": "Chordophones/Zithers/Harpsichord, Unk",
+      "names": {
+        "zh": "羽管键琴（型号未注明）",
+        "en": "Harpsichord (Unspecified Model)"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-harpsichords",
+      "sfz": [
+        "Chordophones/Zithers/Harpsichord, Unk.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Harpsichord, Unk.sfz",
+          "gitBlob": "75a028496a7b8cd5ce53a1e17aaa079aed8026d4",
+          "sha256": "4716ecb6c560265d52cd262b2162b5625afbde169057465431d41fda49796055",
+          "selected": true
+        }
+      ],
+      "sampleCount": 122,
+      "sourceBytes": 163382110
+    },
+    {
+      "id": "instrument-vcsl-psaltery-bowed-and-plucked",
+      "sourceKey": "Chordophones/Zithers/Psaltery, Bowed and Plucked",
+      "names": {
+        "zh": "弓奏与拨奏诗琴",
+        "en": "Psaltery, Bowed and Plucked"
+      },
+      "category": "strings",
+      "batch": "02-winds-and-plucked",
+      "suggestedLibrary": "vcsl-plucked",
+      "sfz": [
+        "Chordophones/Zithers/Psaltery, Bowed and Plucked - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Psaltery, Bowed and Plucked - Keyswitch.sfz",
+          "gitBlob": "224ce6d8bdbef2e261bd0568b3a9022e5b7eb14c",
+          "sha256": "e52f2ec25f091d14e155a66e93b16a3af95a15ad06967a4a4460e5ec7ee119e0",
+          "selected": true
+        },
+        {
+          "path": "Chordophones/Zithers/Psaltery, Bowed and Plucked - LongBow.sfz",
+          "gitBlob": "243752d57e961ffa647ac5a5678c9c8dd42bdce4",
+          "sha256": "7b5ca2ba88ec736aacbe594701ae4ba3abc2563b2122be772e9b4cbbb22e4ab8",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Psaltery, Bowed and Plucked - Spiccato.sfz",
+          "gitBlob": "71e163e94af514d63c09e5ba0da9a98f95b20e73",
+          "sha256": "be7d5470a541b2103857513b4ce22cc65b7d63764c7a8d338c5c8e47b63e3aa8",
+          "selected": false
+        },
+        {
+          "path": "Chordophones/Zithers/Psaltery, Bowed and Plucked - Pluck.sfz",
+          "gitBlob": "dc6241aa9115eb60389bca16b91d67499da6481d",
+          "sha256": "d173008e64f1b00fd42bae4b11c1151f6ff2ca9fb21c29d9c8fa66cc9bf6e071",
+          "selected": false
+        }
+      ],
+      "samplePathRemap": [
+        {
+          "from": "Chordophones/Zithers/Psaltery, Bowed and Plucked/",
+          "to": "Chordophones/Zithers/Harpsichord, Italian/Psaltery, Bowed and Plucked/"
+        }
+      ],
+      "sampleCount": 33,
+      "sourceBytes": 43341852,
+      "notes": [
+        "Repair only the SFZ relative path using the same pinned snapshot; do not fetch samples from another branch."
+      ]
+    },
+    {
+      "id": "instrument-vcsl-upright-piano-knight",
+      "sourceKey": "Chordophones/Zithers/Upright Piano, Knight",
+      "names": {
+        "zh": "Knight 立式钢琴",
+        "en": "Upright Piano, Knight"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-piano-knight",
+      "sfz": [
+        "Chordophones/Zithers/Upright Piano, Knight.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Upright Piano, Knight.sfz",
+          "gitBlob": "8708509a461e7688db3a2aa5fff722a5fee58b2e",
+          "sha256": "38a336299a5e98d8dc6cdb010a0efe600ab00968b2ad1af9003af7694b5e8297",
+          "selected": true
+        }
+      ],
+      "sampleCount": 143,
+      "sourceBytes": 419763698
+    },
+    {
+      "id": "instrument-vcsl-upright-piano-yamaha",
+      "sourceKey": "Chordophones/Zithers/Upright Piano, Yamaha",
+      "names": {
+        "zh": "雅马哈立式钢琴",
+        "en": "Upright Piano, Yamaha"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-piano-yamaha",
+      "sfz": [
+        "Chordophones/Zithers/Upright Piano, Yamaha.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Chordophones/Zithers/Upright Piano, Yamaha.sfz",
+          "gitBlob": "f7d0aea9eadd1ad01453220a8cedb26aa1965e57",
+          "sha256": "0a9cfd18f2549f572c6a00c22b06707b8e4231b52e8bfe4e4d0810462ee473e7",
+          "selected": true
+        }
+      ],
+      "sampleCount": 138,
+      "sourceBytes": 240419220
+    },
+    {
+      "id": "instrument-vcsl-tx81z",
+      "sourceKey": "Electrophones/TX81Z",
+      "names": {
+        "zh": "雅马哈 TX81Z 合成音色",
+        "en": "Yamaha TX81Z"
+      },
+      "category": "keys",
+      "batch": "03-keyboards",
+      "suggestedLibrary": "vcsl-keyboards",
+      "sfz": [
+        "Electrophones/TX81Z - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Electrophones/TX81Z - Clavisynth.sfz",
+          "gitBlob": "e0ada15691cf7212559f87d55b5a412558646d7d",
+          "sha256": "cc590ebc43b88b2f873dab2510a8291f3c28f91a1f9839cc318c047be7f0b907",
+          "selected": false
+        },
+        {
+          "path": "Electrophones/TX81Z - FM Piano.sfz",
+          "gitBlob": "8ffd99c09c37d528a21e1024cbe1f7a28feb2432",
+          "sha256": "67eabcd528859b18a20d1bb4e3e0bae6024f64d7d269dc8d60876514ab5024e5",
+          "selected": false
+        },
+        {
+          "path": "Electrophones/TX81Z - Keyswitch.sfz",
+          "gitBlob": "6b5532eb86c1eb08a8eb1be8f3deb48868a49259",
+          "sha256": "6f7a82c2307db30eba012204ad6340c366d24f23c93b42fed43b7d1e642ca1c0",
+          "selected": true
+        },
+        {
+          "path": "Electrophones/TX81Z - Piano 1.sfz",
+          "gitBlob": "85a14be62f0e01f75dbcfa51373b647b5a1c78ec",
+          "sha256": "b21f1d06595309f89987076882729b6a17c776fe2768b60b2054191983ec73b6",
+          "selected": false
+        }
+      ],
+      "sampleCount": 189,
+      "sourceBytes": 134461113
+    },
+    {
+      "id": "instrument-vcsl-wine-glasses",
+      "sourceKey": "Idiophones/Friction Idiophones/Wine Glasses",
+      "names": {
+        "zh": "摩擦酒杯",
+        "en": "Wine Glasses"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Friction Idiophones/Wine Glasses - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Friction Idiophones/Wine Glasses - Fast.sfz",
+          "gitBlob": "e222d804fe5e727d28ccfef1091ff4f8d18c9dee",
+          "sha256": "ecea2c621561e1cad54392a83126f85dc83b0b6a0e1708c9d3934b72b35d6d80",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Friction Idiophones/Wine Glasses - Keyswitch.sfz",
+          "gitBlob": "1ae9ea71c06aeb819219a28b5661e11071525862",
+          "sha256": "4f06a6a8164dbbb1d9d220bc159d5c35af50461f4a3cd0e6ced3f76117b21bc2",
+          "selected": true
+        },
+        {
+          "path": "Idiophones/Friction Idiophones/Wine Glasses - Slow.sfz",
+          "gitBlob": "55382fa2d8c277096905c0aeee711301a41eb65d",
+          "sha256": "5b95c3bd73bebbc311dba23a3e4e98d2eedc273260770be0c2518d7dfa1dabb3",
+          "selected": false
+        }
+      ],
+      "sampleCount": 16,
+      "sourceBytes": 43720826
+    },
+    {
+      "id": "instrument-vcsl-kalimba-kenya",
+      "sourceKey": "Idiophones/Plucked Idiophones/Kalimba, Kenya",
+      "names": {
+        "zh": "肯尼亚卡林巴拇指琴",
+        "en": "Kalimba, Kenya"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Plucked Idiophones/Kalimba, Kenya.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Plucked Idiophones/Kalimba, Kenya.sfz",
+          "gitBlob": "ba917d9d2e735a1b262519fa189949477a957387",
+          "sha256": "29fb4d6e1a02e05170a6bb921510d1862e5727cb903a3f24fd866b2c320dc4a9",
+          "selected": true
+        }
+      ],
+      "sampleCount": 15,
+      "sourceBytes": 22303536
+    },
+    {
+      "id": "instrument-vcsl-kalimba-tanzania",
+      "sourceKey": "Idiophones/Plucked Idiophones/Kalimba, Tanzania",
+      "names": {
+        "zh": "坦桑尼亚卡林巴拇指琴",
+        "en": "Kalimba, Tanzania"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Plucked Idiophones/Kalimba, Tanzania.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Plucked Idiophones/Kalimba, Tanzania.sfz",
+          "gitBlob": "e8ff013a10ca49331d27e4b82b1b3fc68f033a15",
+          "sha256": "3baf7f72f4dcb0972fe90f2aaff8a00747955639336828d4b5c6e15f75cf3da9",
+          "selected": true
+        }
+      ],
+      "sampleCount": 27,
+      "sourceBytes": 24183456
+    },
+    {
+      "id": "instrument-vcsl-mbira-dzavadzimu-nyamaropa-zimbabwe-low-b",
+      "sourceKey": "Idiophones/Plucked Idiophones/Mbira dzaVadzimu Nyamaropa, Zimbabwe, Low B",
+      "names": {
+        "zh": "津巴布韦 dzaVadzimu 姆比拉琴（低 B 调）",
+        "en": "Mbira dzaVadzimu Nyamaropa, Zimbabwe, Low B"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Plucked Idiophones/Mbira dzaVadzimu Nyamaropa, Zimbabwe, Low B.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Plucked Idiophones/Mbira dzaVadzimu Nyamaropa, Zimbabwe, Low B.sfz",
+          "gitBlob": "b6434afe2da5ecdd5698bc7283fcf28be53adca1",
+          "sha256": "504bb03b04f7c122d65af37c7b26069a1905c03ea29aadcf112b5f387ebc603f",
+          "selected": true
+        }
+      ],
+      "sampleCount": 24,
+      "sourceBytes": 25104426
+    },
+    {
+      "id": "instrument-vcsl-mbira-mavembe-gandanga-zimbabwe-low-g",
+      "sourceKey": "Idiophones/Plucked Idiophones/Mbira Mavembe (Gandanga), Zimbabwe, Low G",
+      "names": {
+        "zh": "津巴布韦 Mavembe 姆比拉琴（低 G 调）",
+        "en": "Mbira Mavembe (Gandanga), Zimbabwe, Low G"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Plucked Idiophones/Mbira Mavembe (Gandanga), Zimbabwe, Low G.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Plucked Idiophones/Mbira Mavembe (Gandanga), Zimbabwe, Low G.sfz",
+          "gitBlob": "2f382fdec58fb3f13527e721f2e8027971ee1ef3",
+          "sha256": "ad08e0ede67225f3a1732e4b67f068c1acc3e2b705d6c2cab97d7809ab66224e",
+          "selected": true
+        }
+      ],
+      "sampleCount": 24,
+      "sourceBytes": 37811268
+    },
+    {
+      "id": "instrument-vcsl-nyunga-nyunga-mozambique-low-f",
+      "sourceKey": "Idiophones/Plucked Idiophones/Nyunga Nyunga, Mozambique, Low F",
+      "names": {
+        "zh": "莫桑比克 Nyunga Nyunga 拇指琴（低 F 调）",
+        "en": "Nyunga Nyunga, Mozambique, Low F"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Plucked Idiophones/Nyunga Nyunga, Mozambique, Low F.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Plucked Idiophones/Nyunga Nyunga, Mozambique, Low F.sfz",
+          "gitBlob": "ca3b667cfbd7f00a1b5c643ec7bbf552d28ac317",
+          "sha256": "8e18fe52303147ae0e8da6b9761803c7742b0f1a9670599fcf0270610700a895",
+          "selected": true
+        }
+      ],
+      "sampleCount": 19,
+      "sourceBytes": 19786318
+    },
+    {
+      "id": "instrument-vcsl-agogo-bells",
+      "sourceKey": "Idiophones/Struck Idiophones/Agogo Bells",
+      "names": {
+        "zh": "阿戈戈双音铃",
+        "en": "Agogo Bells"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Agogo Bells.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Agogo Bells.sfz",
+          "gitBlob": "fa02441bcffdaec33f8b9173eb2a87fc41ca1f3d",
+          "sha256": "0bf398b9d3f767035d233736335d9f9da2dae9921a4ed6cbadb3d3613d1730a3",
+          "selected": true
+        }
+      ],
+      "sampleCount": 5,
+      "sourceBytes": 1376084
+    },
+    {
+      "id": "instrument-vcsl-anvil",
+      "sourceKey": "Idiophones/Struck Idiophones/Anvil",
+      "names": {
+        "zh": "铁砧",
+        "en": "Anvil"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Anvil.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Anvil.sfz",
+          "gitBlob": "0cc359867bb04cc5a6fbc83e26bd1333eef498f3",
+          "sha256": "056bc110f54794f858cb5f2c17d8dea96171d4dc31cccaabc1e06923543b59b5",
+          "selected": true
+        }
+      ],
+      "sampleCount": 9,
+      "sourceBytes": 2798932
+    },
+    {
+      "id": "instrument-vcsl-balafon",
+      "sourceKey": "Idiophones/Struck Idiophones/Balafon",
+      "names": {
+        "zh": "巴拉风木琴",
+        "en": "Balafon"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Balafon - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Balafon - Hard Mallet.sfz",
+          "gitBlob": "68d4e67ae56c22bece4c680671baeecb04bd4b0b",
+          "sha256": "0f82de76fb645f5a4a6d5ef46abbd57e2b3ca7df651e5c4e681392f30a6d2be9",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Balafon - Keyswitch.sfz",
+          "gitBlob": "7ccbcb123f930027bdd99328010578804ebe72eb",
+          "sha256": "ab70ae1d3a829e84811ebd61c17fbd6480fb3623127fcb655042ec67a65b282d",
+          "selected": true
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Balafon - Soft Mallet.sfz",
+          "gitBlob": "32ee68da619aa67a39d51476fad9ff82f108c958",
+          "sha256": "7e12513bd7ef04ac57afad9af4cdf6afd4adb095e45962839a8e5053bd0c1693",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Balafon - Traditional Mallet.sfz",
+          "gitBlob": "34a403fccba4ad5a05968ebd338b4c9bc6f7a3e6",
+          "sha256": "2e6e4b050494ab7eb65105736ee021c793ca1bf05731386cae75b8b874bbe8d3",
+          "selected": false
+        }
+      ],
+      "sampleCount": 54,
+      "sourceBytes": 9552624
+    },
+    {
+      "id": "instrument-vcsl-bell-tree",
+      "sourceKey": "Idiophones/Struck Idiophones/Bell Tree",
+      "names": {
+        "zh": "钟铃树",
+        "en": "Bell Tree"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Bell Tree - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Bell Tree - Individual.sfz",
+          "gitBlob": "3f9f36098e23fd3f2b2f1157e129fbc0557e42ff",
+          "sha256": "d41ef527dde38e3630b356244f8cd602b7d24052f35dcffb5737e2d99e940a23",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Bell Tree - Keyswitch.sfz",
+          "gitBlob": "2906bd301b5f4c04593d2738ba0d85d9d066c33d",
+          "sha256": "034318c5fe68dcb0d7fb09dc149ee2b157dd248ffd8f02fa28645a47c36b9777",
+          "selected": true
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Bell Tree - Stroke.sfz",
+          "gitBlob": "d8110b67aaaf37e28ba6412c19c31f3a61083ab3",
+          "sha256": "6a685d011b6f1524caeae404606f507aa8c1caf2024c79fdf3f3db648441e1e2",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Bell Tree - Legacy.sfz",
+          "gitBlob": "2d166ef32b027e6ac484510142a95a120e181fed",
+          "sha256": "fbf89ed4f116334febf8be9963e1d6d565d4daf801951623787cc2aecf8ddcee",
+          "selected": false
+        }
+      ],
+      "sampleCount": 16,
+      "sourceBytes": 14273178
+    },
+    {
+      "id": "instrument-vcsl-brake-drum",
+      "sourceKey": "Idiophones/Struck Idiophones/Brake Drum",
+      "names": {
+        "zh": "制动鼓打击器",
+        "en": "Brake Drum"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Brake Drum.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Brake Drum.sfz",
+          "gitBlob": "db5c52dde12e8fac6a8b33968e8e2f06f9b53cb6",
+          "sha256": "837b799878959e3b208e9e7d570e145c248e2709a22b140ff31300a48211a512",
+          "selected": true
+        }
+      ],
+      "sampleCount": 17,
+      "sourceBytes": 7315120
+    },
+    {
+      "id": "instrument-vcsl-cabasa",
+      "sourceKey": "Idiophones/Struck Idiophones/Cabasa",
+      "names": {
+        "zh": "卡巴萨沙铃",
+        "en": "Cabasa"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Cabasa.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Cabasa.sfz",
+          "gitBlob": "86b52ff1d397419ae19a92fe1a9df6246284a480",
+          "sha256": "338d32a0b389da1408841295e50e550934d9611a01303ba1b7a2b8cff7f31f92",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 1017124
+    },
+    {
+      "id": "instrument-vcsl-cajon",
+      "sourceKey": "Idiophones/Struck Idiophones/Cajon",
+      "names": {
+        "zh": "箱鼓",
+        "en": "Cajon"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Cajon.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Cajon.sfz",
+          "gitBlob": "f241a49a8e19f639bfe96d09e6d84d70d88054d2",
+          "sha256": "bdc522d0142a5ff1cc1f893f81e24b4b0061db84cbe515230bbf74ccb63f58af",
+          "selected": true
+        }
+      ],
+      "sampleCount": 18,
+      "sourceBytes": 4220340
+    },
+    {
+      "id": "instrument-vcsl-claps",
+      "sourceKey": "Idiophones/Struck Idiophones/Claps",
+      "names": {
+        "zh": "拍手",
+        "en": "Claps"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Claps.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Claps.sfz",
+          "gitBlob": "c78c01da504d2396e29cde3ccf92fabb7616f885",
+          "sha256": "d06bed8168a4960d5482a0a14eafa6814c1cb695908ed7859ebea6aeb031cc67",
+          "selected": true
+        }
+      ],
+      "sampleCount": 10,
+      "sourceBytes": 1238360
+    },
+    {
+      "id": "instrument-vcsl-clash-cymbals-1",
+      "sourceKey": "Idiophones/Struck Idiophones/Clash Cymbals 1",
+      "names": {
+        "zh": "碰钹 1",
+        "en": "Clash Cymbals 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Clash Cymbals 1.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Clash Cymbals 1.sfz",
+          "gitBlob": "6a1966dd297c637d25122e85c5c63bf94b80e604",
+          "sha256": "6843b58894306a5feb219ffee35eea409c9d801cab1f6ef3691f8d08ef83ee5b",
+          "selected": true
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-23-crash-cymbal-1-unpitched-single-hit"
+      ],
+      "sampleCount": 10,
+      "sourceBytes": 14710528
+    },
+    {
+      "id": "instrument-vcsl-clash-cymbals-2",
+      "sourceKey": "Idiophones/Struck Idiophones/Clash Cymbals 2",
+      "names": {
+        "zh": "碰钹 2",
+        "en": "Clash Cymbals 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Clash Cymbals 2.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Clash Cymbals 2.sfz",
+          "gitBlob": "ce35eeebbc692d0e40c5cfe5a92cc72287b65792",
+          "sha256": "8439c28da1cdb8d5d5ced1ac59585e206687606673b26248a8bc701982dafa64",
+          "selected": true
+        }
+      ],
+      "sampleCount": 5,
+      "sourceBytes": 11232990
+    },
+    {
+      "id": "instrument-vcsl-claves",
+      "sourceKey": "Idiophones/Struck Idiophones/Claves",
+      "names": {
+        "zh": "击棒",
+        "en": "Claves"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Claves.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Claves.sfz",
+          "gitBlob": "2c85c53e412ae046f933d33e962c1c9b77628a94",
+          "sha256": "fb4487a8bd71f9fea599b1696dc37fb874d2fccd66e3ba193bcada13da3abddd",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 1155156
+    },
+    {
+      "id": "instrument-vcsl-cowbells",
+      "sourceKey": "Idiophones/Struck Idiophones/Cowbells",
+      "names": {
+        "zh": "牛铃",
+        "en": "Cowbells"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Cowbells.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Cowbells.sfz",
+          "gitBlob": "ec11e5339523bedaa726f143709c87e1a22f0ff7",
+          "sha256": "ec0033776608ddeeeaaa678e4782609c5f5b34104dc387285ebfe3185ca58702",
+          "selected": true
+        }
+      ],
+      "sampleCount": 13,
+      "sourceBytes": 2737192
+    },
+    {
+      "id": "instrument-vcsl-finger-cymbals",
+      "sourceKey": "Idiophones/Struck Idiophones/Finger Cymbals",
+      "names": {
+        "zh": "指钹",
+        "en": "Finger Cymbals"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Finger Cymbals.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Finger Cymbals.sfz",
+          "gitBlob": "88c98cf2580e4540d370078764c5498420a21001",
+          "sha256": "438389800d64d86acd8ef7052f2b5b0c94540f9bc5e38609df68e6a67e2c7e10",
+          "selected": true
+        }
+      ],
+      "sampleCount": 1,
+      "sourceBytes": 1678354
+    },
+    {
+      "id": "instrument-vcsl-flexatone",
+      "sourceKey": "Idiophones/Struck Idiophones/Flexatone",
+      "names": {
+        "zh": "弹性金属片琴",
+        "en": "Flexatone"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Flexatone.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Flexatone.sfz",
+          "gitBlob": "fc6f20c1bc216ec60e778f9eaf91fb8e5db5d321",
+          "sha256": "5b05d35566ba11aa0ef5b01937df99802529abae9ab7919d84e7a467203f5450",
+          "selected": true
+        }
+      ],
+      "sampleCount": 8,
+      "sourceBytes": 11447162
+    },
+    {
+      "id": "instrument-vcsl-glockenspiel",
+      "sourceKey": "Idiophones/Struck Idiophones/Glockenspiel",
+      "names": {
+        "zh": "钟琴",
+        "en": "Glockenspiel"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Glockenspiel.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Glockenspiel.sfz",
+          "gitBlob": "9496f229900ea29b653b0c85bf61e5e607f7c56b",
+          "sha256": "3976ea1a3d5f145b8ee1ba051f224671bc0b1bd980c07248b017a219db48673c",
+          "selected": true
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-18-glockenspiel-1-C5-single-hit",
+        "builtin-recording-18-glockenspiel-2-C6-single-hit",
+        "builtin-recording-18-glockenspiel-3-G5-single-hit"
+      ],
+      "sampleCount": 18,
+      "sourceBytes": 17189468
+    },
+    {
+      "id": "instrument-vcsl-gong-1",
+      "sourceKey": "Idiophones/Struck Idiophones/Gong 1",
+      "names": {
+        "zh": "锣 1",
+        "en": "Gong 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Gong 1.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Gong 1.sfz",
+          "gitBlob": "1cfcb335735325211175f503d2a2879473288cba",
+          "sha256": "fa917b3389bfd2bbcfaec7ecbc5882f5db9b56e33b954f849622b02c58568e52",
+          "selected": true
+        }
+      ],
+      "sampleCount": 7,
+      "sourceBytes": 30702306
+    },
+    {
+      "id": "instrument-vcsl-gong-2",
+      "sourceKey": "Idiophones/Struck Idiophones/Gong 2",
+      "names": {
+        "zh": "锣 2",
+        "en": "Gong 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Gong 2.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Gong 2.sfz",
+          "gitBlob": "1ae94a9df883e8aee456130f6009dd16be24de8e",
+          "sha256": "91ef0e91f62d9b769986c541a5652e773c6dc4d797adc7e5791dccaa18dbb52d",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 2493238
+    },
+    {
+      "id": "instrument-vcsl-guiro",
+      "sourceKey": "Idiophones/Struck Idiophones/Guiro",
+      "names": {
+        "zh": "刮瓜",
+        "en": "Guiro"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Guiro - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Guiro - Keyswitch.sfz",
+          "gitBlob": "9578743e6c1bcf7167f648b142f69efae9ee7512",
+          "sha256": "c2633897e15320cc40b8774aa0cc69b9ffe30b3134d9fd6d125e39418bed1732",
+          "selected": true
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Guiro - Legacy.sfz",
+          "gitBlob": "e3db00c524dcbfa853536760a294f7417b32f18e",
+          "sha256": "c703f28c263477cdb754e78a3e60af83c18e7724acaeb73b40a423be9332a004",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Guiro.sfz",
+          "gitBlob": "8540a437b148e9cc9e2d4b99e58c75a14d7d76db",
+          "sha256": "cfa34ee498aec3da0085529c89a663cb7ca04bacd0479a9c842373ea9bbb882c",
+          "selected": false
+        }
+      ],
+      "sampleCount": 14,
+      "sourceBytes": 2900154
+    },
+    {
+      "id": "instrument-vcsl-hand-bells-nepalese",
+      "sourceKey": "Idiophones/Struck Idiophones/Hand Bells, Nepalese",
+      "names": {
+        "zh": "尼泊尔手铃",
+        "en": "Hand Bells, Nepalese"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Hand Bells, Nepalese.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Hand Bells, Nepalese.sfz",
+          "gitBlob": "7195ed0507f7a30855ffe847f9289c2bd8a27698",
+          "sha256": "1078f82158841dd1138d64ea9fcf3c484a4efdd4280f54f3fd606163bf5da81c",
+          "selected": true
+        }
+      ],
+      "sampleCount": 3,
+      "sourceBytes": 1722846
+    },
+    {
+      "id": "instrument-vcsl-hand-chimes",
+      "sourceKey": "Idiophones/Struck Idiophones/Hand Chimes",
+      "names": {
+        "zh": "手摇音管铃",
+        "en": "Hand Chimes"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Hand Chimes.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Hand Chimes.sfz",
+          "gitBlob": "291b216c9ba7f30e7aed064c40dd6ac248695004",
+          "sha256": "dd2d6363ae0a617b72054f29ef4d10743e0b40f02601604668fef92a44c6aa35",
+          "selected": true
+        }
+      ],
+      "sampleCount": 19,
+      "sourceBytes": 42942234
+    },
+    {
+      "id": "instrument-vcsl-hi-hat-cymbal",
+      "sourceKey": "Idiophones/Struck Idiophones/Hi-Hat Cymbal",
+      "names": {
+        "zh": "踩镲",
+        "en": "Hi-Hat Cymbal"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Hi-Hat Cymbal.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Hi-Hat Cymbal.sfz",
+          "gitBlob": "ea796e264bdfe0025fad8cb21a058270e3c756ee",
+          "sha256": "7eaca69ef812f765df37c2bff68f7776e5205e1c993b91ff11e3f6291f588081",
+          "selected": true
+        }
+      ],
+      "sampleCount": 15,
+      "sourceBytes": 5817376
+    },
+    {
+      "id": "instrument-vcsl-marimba",
+      "sourceKey": "Idiophones/Struck Idiophones/Marimba",
+      "names": {
+        "zh": "马林巴",
+        "en": "Marimba"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Marimba.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Marimba.sfz",
+          "gitBlob": "7638d81cb1b709d05f8fd7e841b9b5863099f9d6",
+          "sha256": "8d13762fc61641976b09332b72d2c220cab41c21e9ce7e844e20797e1c8a8ea3",
+          "selected": true
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-19-marimba-1-B3-single-hit",
+        "builtin-recording-19-marimba-2-C5-single-hit"
+      ],
+      "sampleCount": 30,
+      "sourceBytes": 32026662
+    },
+    {
+      "id": "instrument-vcsl-mark-trees",
+      "sourceKey": "Idiophones/Struck Idiophones/Mark Trees",
+      "names": {
+        "zh": "风铃树",
+        "en": "Mark Trees"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Mark Trees.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Mark Trees.sfz",
+          "gitBlob": "f49086664e479d65f44c49c7c0dd6a0a2e4a35a0",
+          "sha256": "aa6ab924769290a13aea9b58a19c6358b0fa680acc54cecab44113ded2f22c12",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 19727466
+    },
+    {
+      "id": "instrument-vcsl-ratchet",
+      "sourceKey": "Idiophones/Struck Idiophones/Ratchet",
+      "names": {
+        "zh": "棘轮响器",
+        "en": "Ratchet"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Ratchet.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Ratchet.sfz",
+          "gitBlob": "f7ee5ea09356fccdafd6952e67e928275b131c8e",
+          "sha256": "ac35695a52cc6733106d7c6f08151a74ac7d4fddc3b9a48fe0d8892c4fb450d0",
+          "selected": true
+        }
+      ],
+      "sampleCount": 8,
+      "sourceBytes": 7212640
+    },
+    {
+      "id": "instrument-vcsl-shaker",
+      "sourceKey": "Idiophones/Struck Idiophones/Shaker",
+      "names": {
+        "zh": "沙锤（早期款）",
+        "en": "Shaker"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Shaker - Legacy.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Shaker - Legacy.sfz",
+          "gitBlob": "85b413d8d3b6ac5fe5e4da88ed5b209b6e49c95c",
+          "sha256": "9dbffc652f7da7d3181402c429af91430f58643d940ccfaddfccb618a6dd9484",
+          "selected": true
+        }
+      ],
+      "sampleCount": 2,
+      "sourceBytes": 79744
+    },
+    {
+      "id": "instrument-vcsl-shaker-large",
+      "sourceKey": "Idiophones/Struck Idiophones/Shaker, Large",
+      "names": {
+        "zh": "大沙锤",
+        "en": "Shaker, Large"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Shaker, Large.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Shaker, Large.sfz",
+          "gitBlob": "183d32d0b527e503ab7a3b7fcbcce695850920d9",
+          "sha256": "a3a0c5be2a03e3881e0d72ff5f9ff72f1b0429fe06cbd6e28d52a0a794105a81",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 1433472
+    },
+    {
+      "id": "instrument-vcsl-shaker-small",
+      "sourceKey": "Idiophones/Struck Idiophones/Shaker, Small",
+      "names": {
+        "zh": "小沙锤",
+        "en": "Shaker, Small"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Shaker, Small.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Shaker, Small.sfz",
+          "gitBlob": "0456d49816cf54d1a19c5d3e55dcc32e4aaf8bda",
+          "sha256": "c28b6db49b2747dbe3f0a53d16a22383b213b26a25b0518ed3a333ad91ed33a8",
+          "selected": true
+        }
+      ],
+      "sampleCount": 16,
+      "sourceBytes": 1815004
+    },
+    {
+      "id": "instrument-vcsl-slapstick",
+      "sourceKey": "Idiophones/Struck Idiophones/Slapstick",
+      "names": {
+        "zh": "拍板",
+        "en": "Slapstick"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Slapstick.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Slapstick.sfz",
+          "gitBlob": "1c6d3ac986721bf8e0fefbe8aac54ea697ba5418",
+          "sha256": "f4182cbb362dda7f1f66ad4bed8e6c0a6cc57215d0a6f955e9e07509b3d0958e",
+          "selected": true
+        }
+      ],
+      "sampleCount": 5,
+      "sourceBytes": 851948
+    },
+    {
+      "id": "instrument-vcsl-sleigh-bells",
+      "sourceKey": "Idiophones/Struck Idiophones/Sleigh Bells",
+      "names": {
+        "zh": "雪橇铃",
+        "en": "Sleigh Bells"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Sleigh Bells.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Sleigh Bells.sfz",
+          "gitBlob": "118d5c8a5e1755df8056cf6693b05f35643619c3",
+          "sha256": "36e8c48f96f06a2e6b8c5f8e08f916fe165779c7a31c1eb02af4f1d564c71a98",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 4685996
+    },
+    {
+      "id": "instrument-vcsl-slit-drum",
+      "sourceKey": "Idiophones/Struck Idiophones/Slit Drum",
+      "names": {
+        "zh": "裂缝鼓",
+        "en": "Slit Drum"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Slit Drum.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Slit Drum.sfz",
+          "gitBlob": "198eb3cb2871754af46cb272cbbaee2044f69b59",
+          "sha256": "ca4731c7f8b90592201d9e55efb66de9534dea9e34bc740e629ee0f44853d976",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 1471964
+    },
+    {
+      "id": "instrument-vcsl-suspended-cymbal-1",
+      "sourceKey": "Idiophones/Struck Idiophones/Suspended Cymbal 1",
+      "names": {
+        "zh": "悬吊镲 1",
+        "en": "Suspended Cymbal 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Suspended Cymbal 1.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Suspended Cymbal 1.sfz",
+          "gitBlob": "b8a993e63678413ec12004ae904749543dbc18c4",
+          "sha256": "a45d64a46a0d7e04b35b3458a0efeb20e3d90bdd3b3b40dd57f9612a2ab786a2",
+          "selected": true
+        }
+      ],
+      "sampleCount": 22,
+      "sourceBytes": 49972496
+    },
+    {
+      "id": "instrument-vcsl-suspended-cymbal-2",
+      "sourceKey": "Idiophones/Struck Idiophones/Suspended Cymbal 2",
+      "names": {
+        "zh": "悬吊镲 2",
+        "en": "Suspended Cymbal 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Suspended Cymbal 2.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Suspended Cymbal 2.sfz",
+          "gitBlob": "3adb0f6f589e1e84c427c5725c4f07ebd31e0bbb",
+          "sha256": "809ae91d1bf8693a8247c1cc6cdc218ae519a0da93537e0c9142400a2502458a",
+          "selected": true
+        }
+      ],
+      "sampleCount": 23,
+      "sourceBytes": 49095030
+    },
+    {
+      "id": "instrument-vcsl-tambourine-1",
+      "sourceKey": "Idiophones/Struck Idiophones/Tambourine 1",
+      "names": {
+        "zh": "铃鼓 1",
+        "en": "Tambourine 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tambourine 1.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tambourine 1.sfz",
+          "gitBlob": "7099eec4319268d97396cdb25fe125d5ebbac57e",
+          "sha256": "88b4ffd83e6533850e6ced123515cc46fe928f8ffc7de1740608f240a4170ce0",
+          "selected": true
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-25-tambourine-1-unpitched-single-hit"
+      ],
+      "sampleCount": 7,
+      "sourceBytes": 6548092
+    },
+    {
+      "id": "instrument-vcsl-tambourine-2",
+      "sourceKey": "Idiophones/Struck Idiophones/Tambourine 2",
+      "names": {
+        "zh": "铃鼓 2",
+        "en": "Tambourine 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tambourine 2.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tambourine 2.sfz",
+          "gitBlob": "f91a1c78f9df39a92e3e5e236b6dc21edb8a0421",
+          "sha256": "300a67a5c90f4ef8563a65824c5e926f46d1a9b62cc4ff8e3a07ee119753b9de",
+          "selected": true
+        }
+      ],
+      "sampleCount": 7,
+      "sourceBytes": 6253256
+    },
+    {
+      "id": "instrument-vcsl-tambourine-3",
+      "sourceKey": "Idiophones/Struck Idiophones/Tambourine 3",
+      "names": {
+        "zh": "铃鼓 3",
+        "en": "Tambourine 3"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tambourine 3 - Legacy.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tambourine 3 - Legacy.sfz",
+          "gitBlob": "7016068e8e7112fe574ba54cf3336739f41d79dc",
+          "sha256": "2756a5dfd082f1a4bdb2ea2f60c872b03e7bd2d191a5b207abdf1ed6b38b4e24",
+          "selected": true
+        }
+      ],
+      "sampleCount": 4,
+      "sourceBytes": 472756
+    },
+    {
+      "id": "instrument-vcsl-tambourine-4",
+      "sourceKey": "Idiophones/Struck Idiophones/Tambourine 4",
+      "names": {
+        "zh": "铃鼓 4",
+        "en": "Tambourine 4"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tambourine 4 - Legacy.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tambourine 4 - Legacy.sfz",
+          "gitBlob": "0684fce36964a2e82c51f519589736d15a8a73de",
+          "sha256": "bf47312bc7cc14da4972197d3c2ee29e4d655d009a0c515b87f45434d0678fb7",
+          "selected": true
+        }
+      ],
+      "sampleCount": 6,
+      "sourceBytes": 2425890
+    },
+    {
+      "id": "instrument-vcsl-tambourine-5",
+      "sourceKey": "Idiophones/Struck Idiophones/Tambourine 5",
+      "names": {
+        "zh": "铃鼓 5",
+        "en": "Tambourine 5"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tambourine 5 - Legacy.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tambourine 5 - Legacy.sfz",
+          "gitBlob": "0c91996c48e74def4fd0dd1069f670398c39b644",
+          "sha256": "610cc08b44bf41943fd89674e54bdb94777e31c7093f98d8de7bfd590f975182",
+          "selected": true
+        }
+      ],
+      "sampleCount": 9,
+      "sourceBytes": 3745806
+    },
+    {
+      "id": "instrument-vcsl-triangles",
+      "sourceKey": "Idiophones/Struck Idiophones/Triangles",
+      "names": {
+        "zh": "三角铁",
+        "en": "Triangles"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Triangles.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Triangles.sfz",
+          "gitBlob": "002e99af7907cb075e3c578cfd40dcc3df69bca3",
+          "sha256": "5a4ae070403e6778505aa5ea73a109a8fd72caccde18f5fd8ca0b3a33cc2574c",
+          "selected": true
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-24-triangle-1-unpitched-single-hit"
+      ],
+      "sampleCount": 37,
+      "sourceBytes": 32538400
+    },
+    {
+      "id": "instrument-vcsl-tubular-bells-1",
+      "sourceKey": "Idiophones/Struck Idiophones/Tubular Bells 1",
+      "names": {
+        "zh": "管钟 1",
+        "en": "Tubular Bells 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tubular Bells 1.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tubular Bells 1.sfz",
+          "gitBlob": "022c8725f6e49e227be4449f133b579b66b01355",
+          "sha256": "63d9d4949f5499f0085332ee5c277d7c34cb024e64f5681237e6c2d75d7a4d38",
+          "selected": true
+        }
+      ],
+      "sampleCount": 18,
+      "sourceBytes": 65494450
+    },
+    {
+      "id": "instrument-vcsl-tubular-bells-2",
+      "sourceKey": "Idiophones/Struck Idiophones/Tubular Bells 2",
+      "names": {
+        "zh": "管钟 2",
+        "en": "Tubular Bells 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tubular Bells 2.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tubular Bells 2.sfz",
+          "gitBlob": "206ca8257cf3c8496f34b41b7a5da015453f9be7",
+          "sha256": "9ce2237fe3d23921500c6e537bb03b563b2a29dc7f9ba31c6b72bc49631208c6",
+          "selected": true
+        }
+      ],
+      "sampleCount": 22,
+      "sourceBytes": 75496208
+    },
+    {
+      "id": "instrument-vcsl-tubular-bells-3",
+      "sourceKey": "Idiophones/Struck Idiophones/Tubular Bells 3",
+      "names": {
+        "zh": "管钟 3",
+        "en": "Tubular Bells 3"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tubular Bells 3 - Legacy.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tubular Bells 3 - Legacy.sfz",
+          "gitBlob": "4eaaee50be6fb27cd8d7ac596f697b27a86e5692",
+          "sha256": "9b3e6c9a72c6e59539cb9104e5fb5a71c26e8ca8deea1cae797408977ec92920",
+          "selected": true
+        }
+      ],
+      "sampleCount": 18,
+      "sourceBytes": 2497253
+    },
+    {
+      "id": "instrument-vcsl-tubular-glockenspiel",
+      "sourceKey": "Idiophones/Struck Idiophones/Tubular Glockenspiel",
+      "names": {
+        "zh": "管式钟琴",
+        "en": "Tubular Glockenspiel"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Tubular Glockenspiel.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Tubular Glockenspiel.sfz",
+          "gitBlob": "10a83085037031757b8603685ae18c1d97ab8761",
+          "sha256": "4eecde571ad831f69b00f52325949a792880974f378a68220f911eb3f2b85683",
+          "selected": true
+        }
+      ],
+      "sampleCount": 25,
+      "sourceBytes": 14368618
+    },
+    {
+      "id": "instrument-vcsl-vibraphone",
+      "sourceKey": "Idiophones/Struck Idiophones/Vibraphone",
+      "names": {
+        "zh": "颤音琴",
+        "en": "Vibraphone"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Vibraphone - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Vibraphone - Hard Mallets.sfz",
+          "gitBlob": "27f54eb62ce4665ea5eb3fddedd8140c512384c1",
+          "sha256": "75413685fe26f2245c62932336e20a3b254bcb28d409a7f0ff37de2030087a1f",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Vibraphone - Bowed.sfz",
+          "gitBlob": "d4f2ce50a9ecb582b5297a4b285156fff94aec0c",
+          "sha256": "304e09d434b181d9f1b48648cee246dc44568f36a92b81e7715098858c1f5245",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Vibraphone - Keyswitch.sfz",
+          "gitBlob": "a13d93da278f4d69b97e666d490c8ccebc6f4f31",
+          "sha256": "63d7aee8de84625da70d9338c6dc1e64dcd30390f791542e7e13456e26ffc36d",
+          "selected": true
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Vibraphone - Soft Mallets.sfz",
+          "gitBlob": "7256f7c7fed10809a15f80d75aa9af4266d8c213",
+          "sha256": "92ff34fd739d14df29580f33421c54244121dc347e21d4263e58f3ce72c9b605",
+          "selected": false
+        }
+      ],
+      "sampleCount": 50,
+      "sourceBytes": 99488896
+    },
+    {
+      "id": "instrument-vcsl-vibraslap",
+      "sourceKey": "Idiophones/Struck Idiophones/Vibraslap",
+      "names": {
+        "zh": "颤响器",
+        "en": "Vibraslap"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Vibraslap.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Vibraslap.sfz",
+          "gitBlob": "1106551e96b52f4fc313cfa7627478ffcce67ba6",
+          "sha256": "3e72504b1ecff7e29dc75701db8f7c764950cceb81602528cfce9346322839ea",
+          "selected": true
+        }
+      ],
+      "sampleCount": 4,
+      "sourceBytes": 3071854
+    },
+    {
+      "id": "instrument-vcsl-woodblock",
+      "sourceKey": "Idiophones/Struck Idiophones/Woodblock",
+      "names": {
+        "zh": "木鱼",
+        "en": "Woodblock"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Woodblock.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Woodblock.sfz",
+          "gitBlob": "514d75631b2b4396355b3382f561f343aa35104e",
+          "sha256": "711d637a3c1fd20ed5653b0a95f5529ed1c40d1997cf33d31d9501df5bd5b2f8",
+          "selected": true
+        }
+      ],
+      "sampleCount": 10,
+      "sourceBytes": 2448454
+    },
+    {
+      "id": "instrument-vcsl-xylophone",
+      "sourceKey": "Idiophones/Struck Idiophones/Xylophone",
+      "names": {
+        "zh": "木琴",
+        "en": "Xylophone"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-mallets",
+      "sfz": [
+        "Idiophones/Struck Idiophones/Xylophone - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Idiophones/Struck Idiophones/Xylophone - Hard Mallets.sfz",
+          "gitBlob": "7e8bcc47ff64ac032509783236c6b8260ef142fc",
+          "sha256": "aa804e945c3ea3890ad42ff86435bc818793502193e33d40a5e2e3a552859429",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Xylophone - Keyswitch.sfz",
+          "gitBlob": "b81e121dbf35bad1238f5f46802050d1fdfc1ecc",
+          "sha256": "4eb0be1045db30f7a7686e0ab938e317c78386f0cc1e4c532e284555a1ee0fbf",
+          "selected": true
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Xylophone - Medium Mallets.sfz",
+          "gitBlob": "b5bbf5f9a41da6515b0f52dabf8ac1ddeb3425eb",
+          "sha256": "c76e97a2144fc93a8a05826713c229ed6093e5116cfdf3574b365f58ef20fda6",
+          "selected": false
+        },
+        {
+          "path": "Idiophones/Struck Idiophones/Xylophone - Soft Mallets.sfz",
+          "gitBlob": "61a4cea16581a257523b496d6ab78cb978035dda",
+          "sha256": "46b8ad93f2e85370b152205959ec8a9c88f1354a5bc31a0b952391339b246646",
+          "selected": false
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-20-xylophone-1-C4-single-hit",
+        "builtin-recording-20-xylophone-2-C5-single-hit"
+      ],
+      "sampleCount": 47,
+      "sourceBytes": 25912248
+    },
+    {
+      "id": "instrument-vcsl-ocean-drum",
+      "sourceKey": "Membranophones/Other Membranophones/Ocean Drum",
+      "names": {
+        "zh": "海浪鼓",
+        "en": "Ocean Drum"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Other Membranophones/Ocean Drum.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Other Membranophones/Ocean Drum.sfz",
+          "gitBlob": "d9804bacd337845aa5e90d27405309c57e983c79",
+          "sha256": "cd85e4fb1e40adeaea8c1feec53985ef10fc8057549b1a3fc49c89313a3e03dd",
+          "selected": true
+        }
+      ],
+      "sampleCount": 3,
+      "sourceBytes": 15085512
+    },
+    {
+      "id": "instrument-vcsl-bass-drum-1",
+      "sourceKey": "Membranophones/Struck Membranophones/Bass Drum 1",
+      "names": {
+        "zh": "大鼓 1",
+        "en": "Bass Drum 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Bass Drum 1.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Bass Drum 1.sfz",
+          "gitBlob": "96e7ac2295f00c5a6cc03e148970c01d27b32f38",
+          "sha256": "b612aa0afef74ce35ba390042a581c583a78f9328fba90c19ab64fbdb9c4802f",
+          "selected": true
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-21-bass-drum-1-unpitched-single-hit"
+      ],
+      "sampleCount": 8,
+      "sourceBytes": 4607336
+    },
+    {
+      "id": "instrument-vcsl-bass-drum-2",
+      "sourceKey": "Membranophones/Struck Membranophones/Bass Drum 2",
+      "names": {
+        "zh": "大鼓 2",
+        "en": "Bass Drum 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Bass Drum 2.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Bass Drum 2.sfz",
+          "gitBlob": "9651249b38feb7917101c0aae5f214be608b4ffc",
+          "sha256": "af9b2308ed5e0265f25b70714e728cf6e29d3a9e1653f3990e3b545d6181f9ae",
+          "selected": true
+        }
+      ],
+      "sampleCount": 30,
+      "sourceBytes": 54763444
+    },
+    {
+      "id": "instrument-vcsl-bass-drum-3",
+      "sourceKey": "Membranophones/Struck Membranophones/Bass Drum 3",
+      "names": {
+        "zh": "大鼓 3",
+        "en": "Bass Drum 3"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Bass Drum 3 - Legacy.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Bass Drum 3 - Legacy.sfz",
+          "gitBlob": "7a4dc87df2522dec67dad7aeadd552f95ec8b66b",
+          "sha256": "9a53f330f4bda8f70657615857ef69c716383d7c9e82d75bc965051d1e76274d",
+          "selected": true
+        }
+      ],
+      "sampleCount": 39,
+      "sourceBytes": 60800966
+    },
+    {
+      "id": "instrument-vcsl-bongos",
+      "sourceKey": "Membranophones/Struck Membranophones/Bongos",
+      "names": {
+        "zh": "邦戈鼓",
+        "en": "Bongos"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Bongos.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Bongos.sfz",
+          "gitBlob": "28bafd8f57caea6eaa015e1673c9b72dd288933c",
+          "sha256": "2727f3eef5f57e79745316590292b8618ef9335c616bdde072b5a4a8fffb2e29",
+          "selected": true
+        }
+      ],
+      "sampleCount": 28,
+      "sourceBytes": 6776368
+    },
+    {
+      "id": "instrument-vcsl-conga",
+      "sourceKey": "Membranophones/Struck Membranophones/Conga",
+      "names": {
+        "zh": "康加鼓",
+        "en": "Conga"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Conga.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Conga.sfz",
+          "gitBlob": "680fd8c3817e7fabfa321b6354fea4defd71265d",
+          "sha256": "57b2084d40e10964bbe2eee886f9dda56da57bb0f7ee477671d34fd452f8f3cc",
+          "selected": true
+        }
+      ],
+      "sampleCount": 34,
+      "sourceBytes": 4872696
+    },
+    {
+      "id": "instrument-vcsl-darbuka",
+      "sourceKey": "Membranophones/Struck Membranophones/Darbuka",
+      "names": {
+        "zh": "达布卡鼓",
+        "en": "Darbuka"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Darbuka.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Darbuka.sfz",
+          "gitBlob": "dafb5d2a864e0270b54d84ead53ac10f4ce061a2",
+          "sha256": "faba0c3685d770793bd19620e00fb4fb677431eb7f98a830c7ad3048ea537b2c",
+          "selected": true
+        }
+      ],
+      "sampleCount": 20,
+      "sourceBytes": 2512276
+    },
+    {
+      "id": "instrument-vcsl-frame-drum",
+      "sourceKey": "Membranophones/Struck Membranophones/Frame Drum",
+      "names": {
+        "zh": "框鼓",
+        "en": "Frame Drum"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Frame Drum.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Frame Drum.sfz",
+          "gitBlob": "b4ac9b83c8a742930df2c30df8ccd0e6e7b873b2",
+          "sha256": "13173bcc33785f17a11d743286376d701aed1beaa2b0cd8a2f5fd629de0b6e0f",
+          "selected": true
+        }
+      ],
+      "sampleCount": 18,
+      "sourceBytes": 6446376
+    },
+    {
+      "id": "instrument-vcsl-legacy-snares",
+      "sourceKey": "Membranophones/Struck Membranophones/Legacy Snares",
+      "names": {
+        "zh": "早期小军鼓组",
+        "en": "Legacy Snares"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Legacy Snares - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Legacy Snares - Keyswitch.sfz",
+          "gitBlob": "c5e7214bd25ac434bf3c1406995c5de92af7d233",
+          "sha256": "fcebf7e9694fdc7b0e04d4dad74f7680e2a5be7c2edef524bc80bab6974e8d20",
+          "selected": true
+        },
+        {
+          "path": "Membranophones/Struck Membranophones/Legacy Snares - OldSnare.sfz",
+          "gitBlob": "55a64a2ad2847c400c0492a59bde5dee50c4bf3e",
+          "sha256": "28d0629d91db8574eaa3d6f0ee572f1827550cef2d9015a738e752344a5e2aef",
+          "selected": false
+        },
+        {
+          "path": "Membranophones/Struck Membranophones/Legacy Snares - drum1.sfz",
+          "gitBlob": "8d7b21b8b218355df8c9b850d2a061caa154aee5",
+          "sha256": "6c96e88c66ca2ec994f27131f9f187206dd8767da5721be5d9dd3877264937cc",
+          "selected": false
+        },
+        {
+          "path": "Membranophones/Struck Membranophones/Legacy Snares - drum2.sfz",
+          "gitBlob": "6246c950232901c83c664cc5c4405093b03826b4",
+          "sha256": "3211213004668c96c818f6f851bf3d657f219d6e4fd87b08013e56fe2eb975c1",
+          "selected": false
+        },
+        {
+          "path": "Membranophones/Struck Membranophones/Legacy Snares - drum3_marching.sfz",
+          "gitBlob": "ae93fdb710341a209658960964c6c7b0ccb5824e",
+          "sha256": "5f75ea8d31889400823e038cda2ac762e30266b6ece7e121070468e94e9e9b51",
+          "selected": false
+        }
+      ],
+      "sampleCount": 108,
+      "sourceBytes": 13149654
+    },
+    {
+      "id": "instrument-vcsl-legacy-toms",
+      "sourceKey": "Membranophones/Struck Membranophones/Legacy Toms",
+      "names": {
+        "zh": "早期通鼓组",
+        "en": "Legacy Toms"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Legacy Toms.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Legacy Toms.sfz",
+          "gitBlob": "0310d40cd94d4d6ecdf9bfe53f161eb1f30a0e13",
+          "sha256": "136a1436cb400fe9f4efc40301eeac18ea4b08d8113e6d53f2cb0565ed5b3fe2",
+          "selected": true
+        }
+      ],
+      "sampleCount": 41,
+      "sourceBytes": 19657094
+    },
+    {
+      "id": "instrument-vcsl-snare-drum-modern-1",
+      "sourceKey": "Membranophones/Struck Membranophones/Snare Drum, Modern 1",
+      "names": {
+        "zh": "现代小军鼓 1",
+        "en": "Snare Drum, Modern 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Snare Drum, Modern 1.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Snare Drum, Modern 1.sfz",
+          "gitBlob": "b84796d556cd0f35c35d9c4717e2d5441d9414f2",
+          "sha256": "e731950940683b944bbae86307b3c1ad6693724818b8ea862ff83c032dc4316f",
+          "selected": true
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-22-snare-drum-1-unpitched-single-hit"
+      ],
+      "sampleCount": 29,
+      "sourceBytes": 14343060
+    },
+    {
+      "id": "instrument-vcsl-snare-drum-modern-2",
+      "sourceKey": "Membranophones/Struck Membranophones/Snare Drum, Modern 2",
+      "names": {
+        "zh": "现代小军鼓 2",
+        "en": "Snare Drum, Modern 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Snare Drum, Modern 2.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Snare Drum, Modern 2.sfz",
+          "gitBlob": "0d64c5965298413b388a9fc4e204c31585505d8e",
+          "sha256": "b9d89899863471558a8e702ebbc177b9375765835b54e3c935aa3340c591031f",
+          "selected": true
+        }
+      ],
+      "sampleCount": 24,
+      "sourceBytes": 8333900
+    },
+    {
+      "id": "instrument-vcsl-snare-drum-modern-3",
+      "sourceKey": "Membranophones/Struck Membranophones/Snare Drum, Modern 3",
+      "names": {
+        "zh": "现代小军鼓 3",
+        "en": "Snare Drum, Modern 3"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Snare Drum, Modern 3.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Snare Drum, Modern 3.sfz",
+          "gitBlob": "0edfb4c81f8fe0d77d17d0e6ab7e1167b04588c9",
+          "sha256": "4ecd0cd09376de06dd4c4a99539610bfe0e2e27711c4ebe8d99a27574200cb50",
+          "selected": true
+        }
+      ],
+      "sampleCount": 19,
+      "sourceBytes": 7750396
+    },
+    {
+      "id": "instrument-vcsl-snare-drum-rope-tension",
+      "sourceKey": "Membranophones/Struck Membranophones/Snare Drum, Rope Tension",
+      "names": {
+        "zh": "绳张力小军鼓",
+        "en": "Snare Drum, Rope Tension"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Snare Drum, Rope Tension.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Snare Drum, Rope Tension.sfz",
+          "gitBlob": "a46aeabe1a44da497490c391bec0e4728ae33e8e",
+          "sha256": "08bccacb4444a9a4f3163f1a04078e462f702f4d0b3f58ad95d90d93ccee12b9",
+          "selected": true
+        }
+      ],
+      "sampleCount": 32,
+      "sourceBytes": 16921102
+    },
+    {
+      "id": "instrument-vcsl-timpani-1",
+      "sourceKey": "Membranophones/Struck Membranophones/Timpani 1",
+      "names": {
+        "zh": "定音鼓 1",
+        "en": "Timpani 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-timpani",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Timpani 1 - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Timpani 1 - Hit.sfz",
+          "gitBlob": "75321928f34d0d84c30000288cd2262bc2bba3b4",
+          "sha256": "3db28a9c43fee25c4f6927112f631feb30c26cc017b951fe3d5a6e06af4b8f6d",
+          "selected": false
+        },
+        {
+          "path": "Membranophones/Struck Membranophones/Timpani 1 - Keyswitch.sfz",
+          "gitBlob": "0aba2c976d34a1729c1cb5037a76e12f6639818b",
+          "sha256": "5d9374a4587d4c50bc8685ae58d9e032e2c5b542b4d073f8683dfc6ab3f384cc",
+          "selected": true
+        },
+        {
+          "path": "Membranophones/Struck Membranophones/Timpani 1 - Roll.sfz",
+          "gitBlob": "f896c754ca57ab60ea0de7324e9ae93c0c544d54",
+          "sha256": "3ec91e9eee1d8614889380b1a5581fdc5191baaf7598eac6d3c038811dd5c1e5",
+          "selected": false
+        }
+      ],
+      "replaceRecordingEntryIds": [
+        "builtin-recording-17-timpani-2-Cs3-single-hit"
+      ],
+      "sampleCount": 40,
+      "sourceBytes": 81613964
+    },
+    {
+      "id": "instrument-vcsl-timpani-2",
+      "sourceKey": "Membranophones/Struck Membranophones/Timpani 2",
+      "names": {
+        "zh": "定音鼓 2",
+        "en": "Timpani 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-timpani",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Timpani 2 - Keyswitch.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Timpani 2 - All Samples.sfz",
+          "gitBlob": "9029960a7ffdf2a3ff84469b72a3adc09d6899da",
+          "sha256": "021157c07779d86cfd1914650c9eef450f3dfd71d9c274de194d14908a7f84d8",
+          "selected": false
+        },
+        {
+          "path": "Membranophones/Struck Membranophones/Timpani 2 - Keyswitch.sfz",
+          "gitBlob": "7bcf71d0ac26fa9308ecd6e706d8981290327222",
+          "sha256": "2dbdc8b2bcc243d903fd333367794c925d837073921be5409d7d4944315cf3fb",
+          "selected": true
+        },
+        {
+          "path": "Membranophones/Struck Membranophones/Timpani 2 - Scale.sfz",
+          "gitBlob": "5340d15454cf676320e46f1a4f81f93521d5341a",
+          "sha256": "2e1953d4c3c79c187d312f4f93a7249f3024dbc5b4b69b8190c9d68925fb5ab4",
+          "selected": false
+        }
+      ],
+      "sampleCount": 204,
+      "sourceBytes": 291818196
+    },
+    {
+      "id": "instrument-vcsl-tom-1",
+      "sourceKey": "Membranophones/Struck Membranophones/Tom 1",
+      "names": {
+        "zh": "通鼓 1",
+        "en": "Tom 1"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Tom 1.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Tom 1.sfz",
+          "gitBlob": "fcb8d93a537902548e0a728645c5d88fedafed41",
+          "sha256": "43a404f9a247b296694f06b9bf3f3d81b898518a24da7b16a3794f8e926c0eed",
+          "selected": true
+        }
+      ],
+      "sampleCount": 22,
+      "sourceBytes": 14245128
+    },
+    {
+      "id": "instrument-vcsl-tom-2",
+      "sourceKey": "Membranophones/Struck Membranophones/Tom 2",
+      "names": {
+        "zh": "通鼓 2",
+        "en": "Tom 2"
+      },
+      "category": "percussion",
+      "batch": "01-percussion",
+      "suggestedLibrary": "vcsl-percussion",
+      "sfz": [
+        "Membranophones/Struck Membranophones/Tom 2.sfz"
+      ],
+      "sourceMappings": [
+        {
+          "path": "Membranophones/Struck Membranophones/Tom 2.sfz",
+          "gitBlob": "3560d0eaf6812b82b86f6ef5ab0ca146fdb9a2bb",
+          "sha256": "de0b0524ec08f25a69427034fd60c3d6f88809622c248c276ff188bb9a59a479",
+          "selected": true
+        }
+      ],
+      "sampleCount": 22,
+      "sourceBytes": 13995036
+    }
+  ]
+}
